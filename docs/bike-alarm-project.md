@@ -52,22 +52,33 @@ nRF52840 (RAK4631/RAK4630) was chosen over ESP32. Reasons, in priority order:
 2. Built-in solar charge input and Li-ion charger on the WisBlock base
 3. Native, first-class Meshtastic support
 
-### 2.3 Open hardware questions — resolve these first
+### 2.3 Verified hardware — from the boot log
 
-- **[UNVERIFIED] What exactly is in the Kit 2 box?** It is believed to contain a
-  WisBlock base board, the RAK4631 core, a GPS module (likely RAK1910), an
-  accelerometer (likely RAK1904 / LIS3DH), a solar panel and an enclosure.
-  **Physically inventory the kit and record the actual part numbers here** before
-  writing any pin-level code. The base board matters: RAK19007 and RAK5005-O have
-  different pinouts and different quiescent current.
+**[VERIFIED]** 2026-07-27, from the I2C scan and GNSS probe in a stock Meshtastic boot
+log (`env:rak4631`), two consecutive boots, identical results.
+
+| Item | Finding | How |
+|---|---|---|
+| **GNSS** | **RAK12500** (u-blox ZOE-M8Q), on **UART** not I2C | Log reports `U-blox 8 detected`, `FWVER=SPG 3.01`, `PROTVER=18.00`, `GPS;GLO;GAL;BDS`, then `GPS+SBAS+GLONASS+Galileo configured`. A RAK1910 carries a MAX-7Q and would report *u-blox 7*. The scan probed I2C `0x42` and got `0xffff`, so it is serial-attached |
+| **Base board** | RAK19007 family — **no MAX17048 fuel gauge**, ADC battery sensing | `Power::max17048Init lipo sensor is not ready yet`, followed by `Power: battery hardware detected`. Reading 4.271–4.292 V, `battery_level=101` (charging or full) |
+| **RTC** | **None** | `RTC not found (found address 0x00)` |
+| **Screen / I2C keyboard** | None | Scan of 0x1f, 0x34, 0x55, 0x5a, 0x5f found nothing |
+| **I2C bus** | **Exactly one device, at 0x1d** | `1 I2C devices found` |
+| **Accelerometer** | **No LIS3DH.** See §3 | Nothing answered at 0x18 or 0x19 |
+| BLE | Working | Connected and secured to a phone |
+
+### 2.4 Still open
+
 - **[UNVERIFIED] Is the separately-ordered RAK4630 a bare stamp module or a WisBlock
   Core?** The "without IPEX / antenna via RF trace pinout" option suggests it may need
   a carrier that routes the antenna, rather than accepting a u.FL pigtail directly.
   Check before assuming it is a drop-in spare for the Core in the kit.
-- **Which GPS is actually wired?** RAK12500 (ZOE-M8Q, I2C) and RAK1910 are different
-  parts on different WisBlock slots.
+- **Does the Kit 2 box contain an unfitted RAK1904?** The boot log proves nothing is
+  *attached* at 0x18/0x19 — not that one is not owned. Check the box before ordering.
+- **[UNVERIFIED]** Exact base board part number. The absence of a MAX17048 narrows it to
+  the RAK19007 family but does not pin it down. Read the silkscreen.
 
-### 2.4 Siren
+### 2.5 Siren
 
 Decision: **reuse a self-contained 12 V piezo siren**, switched by a MOSFET and fed
 from a boost converter. Rationale: the loudness is already proven, and reusing a
@@ -80,25 +91,107 @@ boost converter must be fully disabled in standby, not merely unloaded.**
 
 ---
 
-## 3. Critical finding: the ADXL313 is not supported by Meshtastic
+## 3. BLOCKER: no usable accelerometer is attached
 
-**[VERIFIED]** against `meshtastic/firmware` @ `5c5cb094e6deb6e4d01d4894b73886f43da84a65`
-(2026-07-26).
+**[VERIFIED]** against `meshtastic/firmware` @ `5c5cb094` and the boot log of 2026-07-27.
+
+### 3.1 The ADXL313 is unsupported *and* actively misidentified
 
 A grep for `adxl` across `src/` returns **zero hits**. The RAK12032 (ADXL313) has no
-driver, no `ScanI2C` detection entry, and no `AccelerometerThread` case.
+driver, no `ScanI2C` entry and no `AccelerometerThread` case.
 
-Supported accelerometers are: LIS3DH, BMA423, BMI270, BMX160, ICM20948, ICM42607P,
-LSM6DS3, MPU6050, QMA6100P, STK8BAXX.
+Worse, the boot log reports:
 
-**Consequence:** use the LIS3DH (RAK1904, expected in Kit 2) for v1. Treat the
-RAK12032 as a spare, or as a later project once the architecture is settled. Writing
-an ADXL313 driver is a real piece of work and should not be on the v1 critical path.
+```
+DFRobot Rain Gauge found at address 0x1d
+1 I2C devices found
+```
 
-The RAK12500 GNSS is fine — `ScanI2CTwoWire.cpp` explicitly recognises it as a
-u-blox device on I2C, and the GPS layer speaks UBX generically.
+There is no rain gauge. From `src/configuration.h`:
 
----
+```c
+#define DFROBOT_RAIN_ADDR 0x1d
+#define LIS3DH_ADDR       0x18
+#define LIS3DH_ADDR_ALT   0x19
+```
+
+**Positively identified 2026-07-27** by photograph of the module: silkscreen reads
+`RAK12032 VA` with `SDA`/`SCL` pads, and the chip carries the Analog Devices logo over
+`XL 313` — AD marks the ADXL series as "XL", so this is an ADXL313. Date code `#2142`,
+lot `29645`. An `X` arrow marks axis orientation. This is no longer an inference.
+
+0x1D is the ADXL313's default I2C address (0x53 alternate), which matches the scan
+exactly. Meshtastic claims a rain gauge because the scanner handles 0x1d with a bare
+`SCAN_SIMPLE_CASE` — address match, no verification. Contrast LIS3DH detection, which
+reads register `0x0F` and requires `0x3300` or `0x3333` before claiming the part.
+
+This is the same class of defect that has stalled upstream issue #9750 for five months:
+naive address-only detection colliding across unrelated sensors.
+
+**Immediate hazard: do not enable environment telemetry.** Only `DeviceTelemetry` is
+currently running, so nothing touches the phantom sensor. Enable environment metrics and
+`DFRobotGravitySensor` will start issuing rain-gauge reads against the accelerometer.
+Simplest mitigation for now: **physically remove the RAK12032.**
+
+### 3.2 There is no LIS3DH either
+
+Nothing answered at 0x18 or 0x19. Supported accelerometers are LIS3DH, BMA423, BMI270,
+BMX160, ICM20948, ICM42607P, LSM6DS3, MPU6050, QMA6100P and STK8BAXX — **none of them is
+present.**
+
+**v1 cannot proceed until this is resolved.** The accelerometer is the trigger; there is
+no project without it.
+
+### 3.3 Reassessment: the ADXL313 may be the *better* part
+
+Initial guidance was to treat the ADXL313 as a spare and use a LIS3DH. On closer
+inspection that undersold it.
+
+**Analog Devices' own listed example applications for the ADXL313 begin with "car
+alarm"** (then hill start aid, electronic parking brakes, data recorders). The part is
+designed for this exact application.
+
+Capabilities relevant here:
+
+- **Activity (motion present) and inactivity (motion absent) detection**, user-defined
+  threshold on any axis, **both mappable to interrupt pins** — the dual-interrupt pattern
+  of §5, natively supported
+- 32-level FIFO, explicitly to reduce host intervention and system power
+- Low power modes for "intelligent motion-based power management with threshold sensing"
+- ±0.5/1/2/4 g, up to 13-bit — low-g ranges suit a bike far better than the LIS3DH's
+  ±2–16 g
+- I2C 0x1D default / 0x53 alternate; SPI also available
+
+**And the driver is less work than first estimated.** The open-source
+[SparkFun_ADXL313_Arduino_Library](https://github.com/sparkfun/SparkFun_ADXL313_Arduino_Library)
+supports I2C and SPI, ships examples for low power modes and interrupts, and already
+exposes `setActivityThreshold()`, `setInactivityThreshold()`, `setTimeInactivity()` over
+the `THRESH_ACT` / `THRESH_INACT` / `TIME_INACT` registers.
+
+For scale: `LIS3DHSensor.cpp` is 35 lines, because `MotionSensor` does the heavy lifting.
+An `ADXL313Sensor` built on the SparkFun library is plausibly comparable. Revised
+estimate: **a focused weekend or two, not weeks.**
+
+The fiddly part is not the driver but the **`ScanI2C` entry**, which must disambiguate
+0x1d by reading the device-ID registers to tell an ADXL313 from a genuine DFRobot rain
+gauge. That is a real upstream bug fix, and the same class of defect blocking #9750 — so
+a PR adding address disambiguation *plus* an ADXL313 driver is well-scoped and likely
+welcome.
+
+### 3.4 Plan
+
+1. **Order a RAK1904 (LIS3DH) anyway** — roughly €10. Not because the ADXL313 is wrong,
+   but because a supported part removes one unknown while everything else in the system
+   is unproven. When interrupt handling misbehaves, a known-good reference tells you
+   whether the fault is the driver, the ISR, or the state machine.
+2. **Check the Kit 2 box first** for an unfitted RAK1904. The RAK12500 occupies a UART
+   slot, so an I2C slot is free.
+3. **Start the ADXL313 driver while waiting for delivery.** The project is blocked
+   regardless; nothing is wasted.
+4. **Keep both parts.** A/B comparison is genuinely valuable when tuning false-alarm
+   discrimination — the hard problem flagged in `reference-device.md` §8.
+5. Until resolved, **remove the RAK12032** so the phantom rain gauge cannot be probed
+   (§3.1).
 
 ## 4. Meshtastic codebase orientation
 
@@ -254,9 +347,56 @@ Therefore: **the realistic board-level floor here is plausibly tens of µA, not 
 digits.** Still compatible with months of standby on a decent cell plus solar, but the
 nRF52840 datasheet System OFF figure is not the number to plan against.
 
-**Consequence for the roadmap:** measure the bare WisBlock in deep sleep *before*
-optimising firmware. If the board floor is ~40 µA, the accelerometer interrupt work
-changes little, and that must be known in week one rather than month three.
+### The benchmark is not 2.5 µA — it is 75 µA
+
+The Long Cricket is a useful teardown, not the target. The target is the commercial
+alarm this project has to beat, and it is now a known figure:
+
+> **75 µA whole-device average** (manufacturer spec), giving 6–10 months on a 700 mAh
+> cell with **no solar input at all**. See `reference-device.md` §3.
+
+That reframes the WisBlock overhead. Tens of µA of unavoidable board overhead is fatal
+against a 2.5 µA benchmark and merely expensive against 75 µA. With solar on top there
+is real headroom — but the budget is tight, not generous.
+
+### Draft budget
+
+| Item | Estimate |
+|---|---|
+| nRF52840, System OFF with RAM retention | ~2 µA |
+| LIS3DH, low-power mode, interrupt armed | 2–10 µA |
+| Siren boost converter in true shutdown | ~1 µA |
+| **WisBlock board overhead** (charger, sense divider, LDO, LEDs) | **10–50 µA — unknown** |
+| **LoRa receive duty cycling** | **see below** |
+| **Total at a 1 s radio poll** | **~35–90 µA** |
+
+The width of that range is almost entirely the WisBlock overhead. **This makes the bare
+board deep-sleep measurement the single decisive number in the project** — the
+difference between comfortably beating 75 µA and missing it.
+
+### Radio duty cycle — the real constraint
+
+SX1262 receive is roughly 4.6–5.3 mA. **[UNVERIFIED — reasoning from typical figures,
+not a datasheet lookup. Verify.]**
+
+- Polling every **200 ms** like the reference device, with a CAD of ~5 ms including wake
+  and settle, is ~2.5% duty — about **115 µA for the radio alone**. Over budget before
+  anything else is counted.
+- Polling every **1 s** is ~0.5%, roughly **20–25 µA**. Affordable, with a worst-case
+  latency of one second — imperceptible for arm/disarm.
+
+**LoRa's long preambles, normally a liability, are an asset here.** The reference device
+must poll at 200 ms because an OOK packet lasts milliseconds. A LoRa preamble can
+comfortably exceed a second, so this project can poll slowly *because* the modulation is
+slow.
+
+Higher spreading factors make CAD proportionally more expensive — longer symbols — while
+buying range. Range, latency and current form a three-way trade that only measurement
+resolves.
+
+**Consequence for the roadmap:** measure the reference device first, the bare WisBlock
+second. Those two numbers — the target set by the incumbent and the floor imposed by the
+board — bound the entire design space, and both are obtainable in an afternoon.
 
 ## 6. Software plan
 
@@ -280,21 +420,66 @@ backed by measurement.
 
 ---
 
+## 6a. Dependency: the alert path needs a second node
+
+**[VERIFIED]** 2026-07-27 from the boot log: `num_online_nodes=1, num_total_nodes=1`,
+zero packets received from any peer across two minutes, noise floor -96 dBm, channel
+utilisation ~1%.
+
+**There is no mesh in range.** Indoors and over two minutes that is not conclusive, but
+it exposes an assumption the design never stated.
+
+A phone talks to the node over **BLE**, which is a few metres. That is not "alert me
+while I am in the supermarket." For remote alerting to mean anything, one of these has to
+be true:
+
+1. **A second node at home** acting as receiver/gateway — the realistic answer, and it
+   doubles as the LoRa test partner needed for any radio duty-cycle work
+2. An existing community mesh with coverage where the bike is parked — needs checking
+   locally, not assumable
+3. Alerting degrades to *local siren only*, with mesh alerting as a bonus when in range
+
+**Consequence:** budget for a second node. It is required for development regardless —
+duty-cycle and range testing need two radios — so this is not extra cost, just earlier
+cost than planned. Note also that a months-standby leaf node cannot itself relay for
+others (§5), so this project consumes mesh coverage without contributing it.
+
 ## 7. Roadmap / open work
 
-1. Physically inventory Kit 2; record actual part numbers (§2.3)
-2. Flash stock Meshtastic `env:rak4631`, confirm the mesh works, confirm which sensors
-   the I2C scan reports at boot
-3. **Baseline current measurement: stock firmware, deep sleep.** Do this early — §5a
-   explains why it may cap what firmware work can achieve
-4. Design the siren driver circuit — MOSFET, boost converter, standby shutdown
-5. LIS3DH interrupt-driven wake, both interrupt lines (driver change)
-6. Persist alarm state across resets (GPREGRET / retained RAM / flash)
-7. Re-measure current; compare against the months-scale target
-8. Alarm state machine module
-9. Radio duty-cycle strategy, informed by 3 and 7 — the one problem with no prior art
-10. GPS integration and power gating (ephemeris-aware duty cycle)
-11. Battery life model including solar input
+### Done
+
+- ~~Flash stock Meshtastic `env:rak4631`, read the I2C scan and GNSS probe~~ —
+  **2026-07-27**, results in §2.3. GPS confirmed working; accelerometer situation
+  discovered.
+
+### Blocking — nothing else matters until these are cleared
+
+1. **Obtain a working accelerometer.** Check the Kit 2 box for an unfitted RAK1904;
+   failing that, order one (~€10). See §3.4. In parallel, begin the ADXL313 driver — the
+   part is already owned and is arguably better suited (§3.3).
+2. **Remove the RAK12032** so the phantom rain gauge at 0x1d cannot be probed (§3.1).
+
+### Next — two measurements that bound the whole design
+
+3. **Profile the reference device** (`reference-device.md` §6). Gives the 75 µA target
+   measured backing, and practice with the rig on known-good hardware.
+4. **Baseline the bare WisBlock in deep sleep.** §5a explains why this may cap what any
+   firmware work can achieve.
+
+### Then
+
+5. Acquire a **second node** — required for any radio testing, and for alerting to work
+   at all (§6a).
+6. Read the base board silkscreen to pin down the exact part number (§2.4).
+7. Design the siren driver circuit — MOSFET, boost converter, true standby shutdown
+   (`siren-driver.md`).
+8. LIS3DH interrupt-driven wake, both interrupt lines (driver change, §5).
+9. Persist alarm state across resets — GPREGRET, retained RAM, or flash (§5).
+10. Re-measure current against the 75 µA target.
+11. Alarm state machine module (§6, and `reference-device.md` §4 for behaviour).
+12. Radio duty-cycle strategy (§5a) — the one problem with no prior art.
+13. GPS power gating, ephemeris-aware duty cycle. **GPS itself already works** (§2.3).
+14. Battery life model including solar input.
 
 ---
 

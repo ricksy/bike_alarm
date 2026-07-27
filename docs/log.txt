@@ -1,0 +1,1055 @@
+INFO  | ??:??:?? 6 [PowerFSM] Init the Mesh bluetooth service
+INFO  | ??:??:?? 6 [PowerFSM] Set up the advertising payload(s)
+INFO  | ??:??:?? 6 [PowerFSM] Advertise
+DEBUG | ??:??:?? 6 [GPS] Trying $PMTK605*31 (MTK Family)...
+INFO  | ??:??:?? 7 [GPS] BLE Connected to Tensor
+DEBUG | ??:??:?? 7 [GPS] BluetoothStatus CONNECTED
+INFO  | ??:??:?? 7 [GPS] BLE connection secured
+DEBUG | ??:??:?? 7 [GPS] Module Info :
+DEBUG | ??:??:?? 7 [GPS] Soft version: ROM CORE 3.01 (107888)
+DEBUG | ??:??:?? 7 [GPS] Hard version: 00080000
+DEBUG | ??:??:?? 7 [GPS] Extensions:4
+DEBUG | ??:??:?? 7 [GPS]   FWVER=SPG 3.01
+DEBUG | ??:??:?? 7 [GPS]   PROTVER=18.00
+DEBUG | ??:??:?? 7 [GPS]   GPS;GLO;GAL;BDS
+DEBUG | ??:??:?? 7 [GPS]   SBAS;IMES;QZSS
+DEBUG | ??:??:?? 7 [GPS] Protocol Version:18.00
+DEBUG | ??:??:?? 7 [GPS] ProtVer=18
+INFO  | ??:??:?? 7 [GPS] U-blox 8 detected
+INFO  | ??:??:?? 7 [GPS] GPS+SBAS+GLONASS+Galileo configured
+INFO  | ??:??:?? 8 [GPS] CCCD Updated: 1
+INFO  | ??:??:?? 8 [GPS] Notify/Indicate enabled
+INFO  | ??:??:?? 8 [GPS] CCCD Updated: 1
+INFO  | ??:??:?? 8 [GPS] Notify/Indicate enabled
+INFO  | ??:??:?? 8 [GPS] toRadioWriteCb data 0x2002da82, len 8
+DEBUG | ??:??:?? 8 [GPS] New ToRadio packet
+DEBUG | ??:??:?? 8 [GPS] Got client heartbeat
+INFO  | ??:??:?? 8 [GPS] toRadioWriteCb data 0x2002da82, len 4
+DEBUG | ??:??:?? 8 [GPS] New ToRadio packet
+INFO  | ??:??:?? 8 [GPS] Client wants config, nonce=69420
+DEBUG | ??:??:?? 8 [GPS] Got zu files in manifest
+INFO  | ??:??:?? 8 [GPS] Start API client config millis=8263
+DEBUG | ??:??:?? 8 [GPS] FromRadio=STATE_SEND_QUEUE_STATUS, numbytes=6
+DEBUG | ??:??:?? 8 [GPS] FromRadio=STATE_SEND_MY_INFO
+INFO  | ??:??:?? 8 [GPS] getFromRadio=STATE_SEND_UIDATA
+DEBUG | ??:??:?? 8 [GPS] Send My NodeInfo
+DEBUG | ??:??:?? 8 [GPS] Send device metadata
+DEBUG | ??:??:?? 8 [GPS] Send channels 8
+DEBUG | ??:??:?? 8 [GPS] Send config: device
+DEBUG | ??:??:?? 9 [GPS] Send config: position
+DEBUG | ??:??:?? 9 [GPS] Send config: power
+DEBUG | ??:??:?? 9 [GPS] Send config: network
+DEBUG | ??:??:?? 9 [GPS] Send config: display
+DEBUG | ??:??:?? 9 [GPS] Send config: lora
+DEBUG | ??:??:?? 9 [GPS] Send config: bluetooth
+DEBUG | ??:??:?? 9 [GPS] Send config: security
+DEBUG | ??:??:?? 9 [GPS] Send config: sessionkey
+DEBUG | ??:??:?? 9 [GPS] Send module config: mqtt
+INFO  | ??:??:?? 9 [GPS] GNSS module configuration saved!
+DEBUG | ??:??:?? 9 [GPS] Publish pos@0:2, hasVal=0, Sats=0, GPSlock=0
+DEBUG | ??:??:?? 9 [GPS] No GPS lock
+DEBUG | ??:??:?? 9 [GPS] onGPSChanged() pos@0 time=0 lat=0 lon=0 alt=0
+INFO  | ??:??:?? 9 [GPS] updatePosition LOCAL pos@0 time=0 lat=0 lon=0 alt=0
+DEBUG | ??:??:?? 9 [GPS] Set local position: lat=0 lon=0 time=0 timestamp=0
+DEBUG | ??:??:?? 9 [GPS] Node status update: 1 online, 1 total
+DEBUG | ??:??:?? 9 [UserButton] Send module config: serial
+DEBUG | ??:??:?? 9 [UserButton] Send module config: ext notification
+DEBUG | ??:??:?? 9 Send module config: store forward
+INFO  | ??:??:?? 9 toRadioWriteCb data 0x2002da82, len 31
+DEBUG | ??:??:?? 9 New ToRadio packet
+DEBUG | ??:??:?? 9 PACKET FROM PHONE (id=0x693f7a56 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 9 Enqueued local (id=0x693f7a56 fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 9 Client not yet interested in packets (state=7)
+INFO  | ??:??:?? 9 [Router] Packet History - insert: Using new slot @uptime 9.738s TRACE NEW
+DEBUG | ??:??:?? 9 [Router] handleReceived(REMOTE) (id=0x693f7a56 fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 9 [Router] Module 'Admin' wantsPacket=1
+INFO  | ??:??:?? 9 [Router] Received Admin from=0x0, id=0x693f7a56, portnum=6, payloadlen=2
+INFO  | ??:??:?? 9 [Router] Handle admin payload 14
+INFO  | ??:??:?? 9 [Router] Client getting ringtone
+INFO  | ??:??:?? 9 [Router] *** handleGetRingtone
+DEBUG | ??:??:?? 9 [Router] Reply prepared by module 'ExternalNotificationModule' of variant: 15
+DEBUG | ??:??:?? 9 [Router] Set admin key to  00 6b a5 e5 0d a0 6c 26
+
+DEBUG | ??:??:?? 9 [Router] Initial packet id 893902027
+DEBUG | ??:??:?? 9 [Router] Partially randomized packet id 1733562572
+INFO  | ??:??:?? 9 [Router] Asked module 'Admin' to send a response
+DEBUG | ??:??:?? 9 [Router] Module 'routing' wantsPacket=1
+DEBUG | ??:??:?? 9 [Router] Routing sniffing (id=0x693f7a56 fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 9 [Router] Another module replied to this message, no need for 2nd ack
+DEBUG | ??:??:?? 9 [Router] Module 'routing' considered
+DEBUG | ??:??:?? 9 [Router] Send response (id=0x675410cc fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=693f7a56 priority=70)
+DEBUG | ??:??:?? 9 [Router] Ignore update from self
+DEBUG | ??:??:?? 9 [Router] Enqueued local (id=0x675410cc fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=693f7a56 priority=70)
+INFO  | ??:??:?? 9 [Router] tophone queue status queue is full, discard oldest
+DEBUG | ??:??:?? 9 [Router] Rx someone rebroadcasting for us (id=0x675410cc fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=693f7a56 priority=7
+DEBUG | ??:??:?? 9 [Router] Didn't find pending packet
+INFO  | ??:??:?? 9 [Router] Packet History - insert: Using new slot @uptime 9.777s TRACE NEW
+DEBUG | ??:??:?? 9 [Router] handleReceived(REMOTE) (id=0x675410cc fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=693f7a56 priority=70)
+DEBUG | ??:??:?? 9 [Router] Send module config: range test
+DEBUG | ??:??:?? 9 [Router] Module 'Admin' wantsPacket=1
+INFO  | ??:??:?? 9 [Router] Received Admin from=0xef8d4c32, id=0x675410cc, portnum=6, payloadlen=44
+DEBUG | ??:??:?? 9 [Router] Allow admin response message
+INFO  | ??:??:?? 9 [Router] Handle admin payload 15
+DEBUG | ??:??:?? 9 [Router] Module API did not handle admin message 15
+DEBUG | ??:??:?? 9 [Router] Module 'Admin' considered
+DEBUG | ??:??:?? 9 [Router] Module 'routing' wantsPacket=1
+DEBUG | ??:??:?? 9 [Router] Routing sniffing (id=0x675410cc fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=693f7a56 priority=70)
+DEBUG | ??:??:?? 9 [Router] Received a ACK for 0x693f7a56, stopping retransmissions
+DEBUG | ??:??:?? 9 [Router] Delivering rx packet (id=0x675410cc fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=693f7a56 priority=70)
+DEBUG | ??:??:?? 9 [Router] Ignore update from self
+DEBUG | ??:??:?? 9 [Router] Forwarding to phone (id=0x675410cc fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=693f7a56 priority=70)
+DEBUG | ??:??:?? 9 [Router] Module 'routing' considered
+DEBUG | ??:??:?? 9 Client not yet interested in packets (state=7)
+DEBUG | ??:??:?? 9 Send module config: telemetry
+DEBUG | ??:??:?? 9 Send module config: canned message
+DEBUG | ??:??:?? 9 Send module config: audio
+INFO  | ??:??:?? 9 toRadioWriteCb data 0x2002da82, len 31
+DEBUG | ??:??:?? 9 New ToRadio packet
+DEBUG | ??:??:?? 9 PACKET FROM PHONE (id=0x59aec882 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 9 Enqueued local (id=0x59aec882 fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+INFO  | ??:??:?? 10 tophone queue status queue is full, discard oldest
+DEBUG | ??:??:?? 10 Client not yet interested in packets (state=7)
+INFO  | ??:??:?? 10 [Router] Packet History - insert: Using new slot @uptime 10.002s TRACE NEW
+DEBUG | ??:??:?? 10 [Router] handleReceived(REMOTE) (id=0x59aec882 fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 10 [Router] Module 'Admin' wantsPacket=1
+INFO  | ??:??:?? 10 [Router] Received Admin from=0x0, id=0x59aec882, portnum=6, payloadlen=2
+INFO  | ??:??:?? 10 [Router] Handle admin payload 10
+DEBUG | ??:??:?? 10 [Router] Client getting radio canned messages
+DEBUG | ??:??:?? 10 [Router] *** handleGetCannedMessageModuleMessages
+DEBUG | ??:??:?? 10 [Router] Reply prepared by module 'canned' of variant: 11
+DEBUG | ??:??:?? 10 [Router] Set admin key to  00 6b a5 e5 0d a0 6c 26
+
+DEBUG | ??:??:?? 10 [Router] Partially randomized packet id 1076100301
+INFO  | ??:??:?? 10 [Router] Asked module 'Admin' to send a response
+DEBUG | ??:??:?? 10 [Router] Module 'routing' wantsPacket=1
+DEBUG | ??:??:?? 10 [Router] Routing sniffing (id=0x59aec882 fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 10 [Router] Another module replied to this message, no need for 2nd ack
+DEBUG | ??:??:?? 10 [Router] Module 'routing' considered
+DEBUG | ??:??:?? 10 [Router] Send response (id=0x4023fccd fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=59aec882 priority=70)
+DEBUG | ??:??:?? 10 [Router] Ignore update from self
+DEBUG | ??:??:?? 10 [Router] Enqueued local (id=0x4023fccd fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=59aec882 priority=70)
+INFO  | ??:??:?? 10 [Router] tophone queue status queue is full, discard oldest
+DEBUG | ??:??:?? 10 [Router] Rx someone rebroadcasting for us (id=0x4023fccd fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=59aec882 priority=7
+DEBUG | ??:??:?? 10 [Router] Didn't find pending packet
+INFO  | ??:??:?? 10 [Router] Packet History - insert: Using new slot @uptime 10.040s TRACE NEW
+DEBUG | ??:??:?? 10 [Router] handleReceived(REMOTE) (id=0x4023fccd fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=59aec882 priority=70)
+DEBUG | ??:??:?? 10 [Router] Send module config: remote hardware
+DEBUG | ??:??:?? 10 [Router] Module 'Admin' wantsPacket=1
+INFO  | ??:??:?? 10 [Router] Received Admin from=0xef8d4c32, id=0x4023fccd, portnum=6, payloadlen=29
+DEBUG | ??:??:?? 10 [Router] Allow admin response message
+INFO  | ??:??:?? 10 [Router] Handle admin payload 11
+DEBUG | ??:??:?? 10 [Router] Module API did not handle admin message 11
+DEBUG | ??:??:?? 10 [Router] Module 'Admin' considered
+DEBUG | ??:??:?? 10 [Router] Module 'routing' wantsPacket=1
+DEBUG | ??:??:?? 10 [Router] Routing sniffing (id=0x4023fccd fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=59aec882 priority=70)
+DEBUG | ??:??:?? 10 [Router] Received a ACK for 0x59aec882, stopping retransmissions
+DEBUG | ??:??:?? 10 [Router] Delivering rx packet (id=0x4023fccd fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=59aec882 priority=70)
+DEBUG | ??:??:?? 10 [Router] Ignore update from self
+DEBUG | ??:??:?? 10 [Router] Forwarding to phone (id=0x4023fccd fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=59aec882 priority=70)
+DEBUG | ??:??:?? 10 [Router] Module 'routing' considered
+DEBUG | ??:??:?? 10 Client not yet interested in packets (state=7)
+DEBUG | ??:??:?? 10 [UserButton] Send module config: neighbor info
+DEBUG | ??:??:?? 10 [UserButton] Send module config: ambient lighting
+DEBUG | ??:??:?? 10 [UserButton] Send module config: detection sensor
+DEBUG | ??:??:?? 10 [UserButton] Send module config: paxcounter
+ERROR | ??:??:?? 10 Unknown module config type 14
+ERROR | ??:??:?? 10 Unknown module config type 15
+ERROR | ??:??:?? 10 Unknown module config type 16
+DEBUG | ??:??:?? 10 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | ??:??:?? 10 File: meshtastic.txt (90) bytes
+DEBUG | ??:??:?? 10 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | ??:??:?? 10 File: transmit_history.dat (13) bytes
+DEBUG | ??:??:?? 10 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | ??:??:?? 10 File: config.proto (228) bytes
+DEBUG | ??:??:?? 10 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | ??:??:?? 10 File: module.proto (124) bytes
+DEBUG | ??:??:?? 10 [GPS] Upgrade time to quality GPS
+DEBUG | ??:??:?? 10 [GPS] FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | ??:??:?? 10 [GPS] File: channels.proto (57) bytes
+WARN  | 14:29:45 10 [GPS] RTC not found (found address 0x00)
+WARN  | 14:29:45 10 [GPS] RTC not found (found address 0x00)
+DEBUG | 14:29:45 10 [GPS] Time source acquired (None -> GPS), triggering NodeInfo recheck
+DEBUG | 14:29:45 10 [GPS] NodeInfo: scheduling immediate periodic check
+DEBUG | 14:29:45 10 [GPS] NMEA GPS time set 2026-07-27 12:29:45 age 10
+INFO  | 14:29:45 10 [NodeInfo] Send our nodeinfo to mesh (wantReplies=0)
+DEBUG | 14:29:45 10 [NodeInfo] Skip send NodeInfo since we sent it <600s ago
+DEBUG | 14:29:45 10 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:29:45 10 File: device.proto (160) bytes
+DEBUG | 14:29:45 10 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:29:45 10 File: nodes.proto (286) bytes
+DEBUG | 14:29:45 10 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:29:45 10 File: Messages_default.msgs (1) bytes
+DEBUG | 14:29:45 10 FromRadio=STATE_SEND_FILEMANIFEST
+INFO  | 14:29:45 10 Config Send Complete millis=10884
+DEBUG | 14:29:45 10 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:29:45 10 FromRadio=STATE_SEND_PACKETS
+��@INFO  | ??:??:?? 1
+
+//\ E S H T /\ S T / C
+
+DEBUG | ??:??:?? 1 Filesystem files:
+DEBUG | ??:??:?? 1    meshtastic.txt (90 Bytes)
+DEBUG | ??:??:?? 1  adafruit (directory)
+DEBUG | ??:??:?? 1  bond_prph (directory)
+DEBUG | ??:??:?? 1  bond_cntr (directory)
+DEBUG | ??:??:?? 1  prefs (directory)
+DEBUG | ??:??:?? 1    transmit_history.dat (13 Bytes)
+DEBUG | ??:??:?? 1    config.proto (228 Bytes)
+DEBUG | ??:??:?? 1    module.proto (124 Bytes)
+DEBUG | ??:??:?? 1    channels.proto (57 Bytes)
+DEBUG | ??:??:?? 1    device.proto (160 Bytes)
+DEBUG | ??:??:?? 1    nodes.proto (286 Bytes)
+DEBUG | ??:??:?? 1    Messages_default.msgs (1 Bytes)
+DEBUG | ??:??:?? 1 Power::max17048Init lipo sensor is not ready yet
+DEBUG | ??:??:?? 1 Use analog input 5 for battery level
+INFO  | ??:??:?? 1 Scan for i2c devices
+DEBUG | ??:??:?? 1 Scan for I2C devices on port 1
+INFO  | ??:??:?? 1 DFRobot Rain Gauge found at address 0x1d
+DEBUG | ??:??:?? 1 Register value from 0x42: 0xffff
+DEBUG | ??:??:?? 1 Register MFG_UID FE: 0xffff
+DEBUG | ??:??:?? 1 Register value from 0x42: 0xffff
+DEBUG | ??:??:?? 1 Register MFG_UID 05: 0xffff
+INFO  | ??:??:?? 1 1 I2C devices found
+DEBUG | ??:??:?? 1 acc_info = 0
+DEBUG | ??:??:?? 1 mag_info = 0
+INFO  | ??:??:?? 1 S:B:9,2.7.26.54e0d8d,rak4631,meshtastic/firmware
+INFO  | ??:??:?? 1 Build timestamp: 1782259200
+DEBUG | ??:??:?? 1 Reset reason: 0x0
+ERROR | ??:??:?? 1 No radio instance available to provide entropy
+DEBUG | ??:??:?? 1 Set random seed 92595653
+INFO  | ??:??:?? 1 Init NodeDB
+INFO  | ??:??:?? 1 Load /prefs/nodes.proto
+INFO  | ??:??:?? 1 Loaded /prefs/nodes.proto successfully
+INFO  | ??:??:?? 1 Loaded saved nodedatabase version 24, with nodes count: 1
+INFO  | ??:??:?? 1 Load /prefs/device.proto
+INFO  | ??:??:?? 1 Loaded /prefs/device.proto successfully
+INFO  | ??:??:?? 1 Loaded saved devicestate version 24
+INFO  | ??:??:?? 1 Load /prefs/config.proto
+INFO  | ??:??:?? 1 Loaded /prefs/config.proto successfully
+INFO  | ??:??:?? 1 Loaded saved config version 24
+INFO  | ??:??:?? 1 Load /prefs/module.proto
+INFO  | ??:??:?? 1 Loaded /prefs/module.proto successfully
+INFO  | ??:??:?? 1 Loaded saved moduleConfig version 24
+INFO  | ??:??:?? 1 Load /prefs/channels.proto
+INFO  | ??:??:?? 1 Loaded /prefs/channels.proto successfully
+INFO  | ??:??:?? 1 Loaded saved channelFile version 24
+ERROR | ??:??:?? 1 Could not open / read /prefs/uiconfig.proto
+DEBUG | ??:??:?? 1 cleanupMeshDB purged 0 entries
+DEBUG | ??:??:?? 1 Use nodenum 0xef8d4c32
+DEBUG | ??:??:?? 1 Expand short PSK #1
+INFO  | ??:??:?? 1 Wanted region 3, using EU_868
+DEBUG | ??:??:?? 1 Coerce telemetry to role-aware minimum on defaults
+DEBUG | ??:??:?? 1 Coerce position broadcasts to role-aware minimum and smart broadcast min of 5 minutes on defaults
+INFO  | ??:??:?? 1 Sort took 0 milliseconds
+DEBUG | ??:??:?? 1 Save to disk 0
+INFO  | ??:??:?? 1 TransmitHistory: loaded 1 entries from disk
+WARN  | ??:??:?? 1 Packet History - Invalid size -1, using default 160
+DEBUG | ??:??:?? 2 Use compiled/slipstreamed tzplaceholder
+DEBUG | ??:??:?? 2 Saved TZ: MEZ-1MESZ,M3.4.0/2:00:00,M10.4.0/3:00:00
+DEBUG | ??:??:?? 2 Set Timezone to MEZ-1MESZ,M3.4.0/2:00:00,M10.4.0/3:00:00
+WARN  | ??:??:?? 2 RTC not found (found address 0x00)
+INFO  | ??:??:?? 2 GPS power state move from OFF to ACTIVE
+DEBUG | ??:??:?? 2 Use GPIO15 for GPS RX
+DEBUG | ??:??:?? 2 Use GPIO16 for GPS TX
+ERROR | ??:??:?? 2 Could not open / read /prefs/cannedConf.proto
+INFO  | ??:??:?? 2 CannedMessageModule is enabled
+ERROR | ??:??:?? 2 Could not open / read /prefs/ringtone.proto
+INFO  | ??:??:?? 2 Init External Notification Module
+INFO  | ??:??:?? 2 Use Pin 36 in digital mode
+DEBUG | ??:??:?? 2 Init NCP5623 Ambient light w/ current=10.000000, red=0, green=0, blue=0
+INFO  | ??:??:?? 2 Use Pin 21 in PWM mode
+DEBUG | ??:??:?? 2 Rescan for I2C keyboard
+DEBUG | ??:??:?? 2 Scan for I2C devices on port 1
+DEBUG | ??:??:?? 2 Scan address 0x1f
+DEBUG | ??:??:?? 2 Scan address 0x34
+DEBUG | ??:??:?? 2 Scan address 0x55
+DEBUG | ??:??:?? 2 Scan address 0x5a
+DEBUG | ??:??:?? 2 Scan address 0x5f
+DEBUG | ??:??:?? 2 SX126xInterface(cs=42, irq=47, rst=38, busy=46)
+DEBUG | ??:??:?? 2 SX126X_DIO3_TCXO_VOLTAGE defined, using DIO3 as TCXO reference voltage at 1.800000 V
+INFO  | ??:??:?? 2 Start meshradio init
+INFO  | ??:??:?? 2 Radio freq=869.525, config.lora.frequency_offset=0.000
+INFO  | ??:??:?? 2 Set radio: region=EU_868, name=LongFast, config=0, ch=0, power=27
+INFO  | ??:??:?? 2 myRegion->freqStart -> myRegion->freqEnd: 869.400024 -> 869.650024 (0.250000 MHz)
+INFO  | ??:??:?? 2 numChannels: 1 x 250.000kHz
+INFO  | ??:??:?? 2 channel_num: 1
+INFO  | ??:??:?? 2 frequency: 869.525024
+INFO  | ??:??:?? 2 Slot time: 28 msec, preamble time: 131 msec
+INFO  | ??:??:?? 2 Final Tx power: 22 dBm
+INFO  | ??:??:?? 2 SX126x init result 0
+INFO  | ??:??:?? 2 Frequency set to 869.525024
+INFO  | ??:??:?? 2 Bandwidth set to 250.000000
+INFO  | ??:??:?? 2 Power output set to 22
+DEBUG | ??:??:?? 2 Current limit set to 140.000000
+DEBUG | ??:??:?? 2 Current limit set result 0
+DEBUG | ??:??:?? 2 Set DIO2 as RF switch, result: 0
+DEBUG | ??:??:?? 2 SX126X_RXEN not defined, defaulting to RADIOLIB_NC
+DEBUG | ??:??:?? 2 SX126X_TXEN not defined, defaulting to RADIOLIB_NC
+DEBUG | ??:??:?? 2 Use MCU pin -1 as RXEN and pin -1 as TXEN to control RF switching
+INFO  | ??:??:?? 2 Set RX gain to boosted mode; result: 0
+INFO  | ??:??:?? 2 Applied SX1262 register 0x8B5 patch for RX improvement
+INFO  | ??:??:?? 2 SX1262 init success
+INFO  | ??:??:?? 2 Not using Ethernet
+DEBUG | ??:??:?? 2 LoRA bitrate = 116.967873 bytes / sec
+INFO  | ??:??:?? 2 PowerFSM init, USB power=1
+DEBUG | ??:??:?? 2 Node status update: 1 online, 1 total
+INFO  | ??:??:?? 2 [Power] Power: battery hardware detected
+INFO  | ??:??:?? 2 [ExternalNotification] Turning off external notification:
+INFO  | ??:??:?? 2 [ExternalNotification] Stop RTTTL playback
+INFO  | ??:??:?? 2 [ExternalNotification] Turning off setExternalStates
+DEBUG | ??:??:?? 2 [ExternalNotification] Init NCP5623 Ambient light w/ current=10.000000, red=0, green=0, blue=0
+DEBUG | ??:??:?? 2 [ExternalNotification] Init NCP5623 Ambient light w/ current=10.000000, red=0, green=0, blue=0
+DEBUG | ??:??:?? 2 [ExternalNotification] Init NCP5623 Ambient light w/ current=10.000000, red=0, green=0, blue=0
+DEBUG | ??:??:?? 2 [GPS] Trying $PDTINFO (Unicore Family)...
+DEBUG | ??:??:?? 3 [GPS] Trying $PCAS06,1*1A (ATGM33xx Family)...
+DEBUG | ??:??:?? 3 [GPS] Trying $PAIR021*39 (Airoha Family)...
+DEBUG | ??:??:?? 4 [GPS] Trying $PQTMVERNO*58 (LC86)...
+DEBUG | ??:??:?? 5 [GPS] Trying $PCAS06,0*1B (L76K)...
+DEBUG | ??:??:?? 5 [PowerFSM] Init NRF52 Bluetooth
+INFO  | ??:??:?? 5 [PowerFSM] Init the Bluefruit nRF52 module
+INFO  | ??:??:?? 5 [PowerFSM] Bluetooth pin set to '123456'
+INFO  | ??:??:?? 5 [PowerFSM] Init the Device Information Service
+INFO  | ??:??:?? 5 [PowerFSM] Init the Battery Service
+INFO  | ??:??:?? 5 [PowerFSM] Init the Mesh bluetooth service
+INFO  | ??:??:?? 5 [PowerFSM] Set up the advertising payload(s)
+INFO  | ??:??:?? 5 [PowerFSM] Advertise
+DEBUG | ??:??:?? 5 [GPS] Trying $PMTK605*31 (MTK Family)...
+INFO  | ??:??:?? 6 [GPS] BLE Connected to Tensor
+DEBUG | ??:??:?? 6 [GPS] BluetoothStatus CONNECTED
+INFO  | ??:??:?? 6 [GPS] BLE connection secured
+DEBUG | ??:??:?? 6 [GPS] Module Info :
+DEBUG | ??:??:?? 6 [GPS] Soft version: ROM CORE 3.01 (107888)
+DEBUG | ??:??:?? 6 [GPS] Hard version: 00080000
+DEBUG | ??:??:?? 6 [GPS] Extensions:4
+DEBUG | ??:??:?? 6 [GPS]   FWVER=SPG 3.01
+DEBUG | ??:??:?? 6 [GPS]   PROTVER=18.00
+DEBUG | ??:??:?? 6 [GPS]   GPS;GLO;GAL;BDS
+DEBUG | ??:??:?? 6 [GPS]   SBAS;IMES;QZSS
+DEBUG | ??:??:?? 6 [GPS] Protocol Version:18.00
+DEBUG | ??:??:?? 6 [GPS] ProtVer=18
+INFO  | ??:??:?? 6 [GPS] U-blox 8 detected
+INFO  | ??:??:?? 6 [GPS] CCCD Updated: 1
+INFO  | ??:??:?? 6 [GPS] Notify/Indicate enabled
+INFO  | ??:??:?? 6 [GPS] CCCD Updated: 1
+INFO  | ??:??:?? 6 [GPS] Notify/Indicate enabled
+INFO  | ??:??:?? 6 [GPS] toRadioWriteCb data 0x2002da82, len 7
+DEBUG | ??:??:?? 6 [GPS] New ToRadio packet
+DEBUG | ??:??:?? 6 [GPS] Got client heartbeat
+INFO  | ??:??:?? 6 [GPS] GPS+SBAS+GLONASS+Galileo configured
+INFO  | ??:??:?? 7 [GPS] toRadioWriteCb data 0x2002da82, len 4
+DEBUG | ??:??:?? 7 [GPS] New ToRadio packet
+INFO  | ??:??:?? 7 [GPS] Client wants config, nonce=69420
+DEBUG | ??:??:?? 7 [GPS] Got zu files in manifest
+INFO  | ??:??:?? 7 [GPS] Start API client config millis=7044
+DEBUG | ??:??:?? 7 [GPS] FromRadio=STATE_SEND_QUEUE_STATUS, numbytes=6
+DEBUG | ??:??:?? 7 [GPS] FromRadio=STATE_SEND_MY_INFO
+INFO  | ??:??:?? 7 [GPS] getFromRadio=STATE_SEND_UIDATA
+DEBUG | ??:??:?? 7 [GPS] Send My NodeInfo
+DEBUG | ??:??:?? 7 [GPS] Send device metadata
+DEBUG | ??:??:?? 7 [GPS] Send channels 8
+DEBUG | ??:??:?? 7 [GPS] Send config: device
+DEBUG | ??:??:?? 7 [GPS] Send config: position
+DEBUG | ??:??:?? 7 [GPS] Send config: power
+DEBUG | ??:??:?? 7 [GPS] Send config: network
+DEBUG | ??:??:?? 7 [GPS] Send config: display
+DEBUG | ??:??:?? 8 [GPS] Send config: lora
+DEBUG | ??:??:?? 8 [GPS] Send config: bluetooth
+DEBUG | ??:??:?? 8 [GPS] Send config: security
+DEBUG | ??:??:?? 8 [GPS] Send config: sessionkey
+DEBUG | ??:??:?? 8 [GPS] Send module config: mqtt
+DEBUG | ??:??:?? 8 [GPS] Send module config: serial
+DEBUG | ??:??:?? 8 [GPS] Send module config: ext notification
+DEBUG | ??:??:?? 8 [GPS] Send module config: store forward
+INFO  | ??:??:?? 8 [GPS] toRadioWriteCb data 0x2002da82, len 31
+DEBUG | ??:??:?? 8 [GPS] New ToRadio packet
+DEBUG | ??:??:?? 8 [GPS] PACKET FROM PHONE (id=0x006134ec fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 8 [GPS] Enqueued local (id=0x006134ec fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 8 [GPS] Send module config: range test
+DEBUG | ??:??:?? 8 [GPS] Send module config: telemetry
+INFO  | ??:??:?? 8 [GPS] GNSS module configuration saved!
+DEBUG | ??:??:?? 8 [GPS] Publish pos@0:2, hasVal=0, Sats=0, GPSlock=0
+DEBUG | ??:??:?? 8 [GPS] No GPS lock
+DEBUG | ??:??:?? 8 [GPS] onGPSChanged() pos@0 time=0 lat=0 lon=0 alt=0
+INFO  | ??:??:?? 8 [GPS] updatePosition LOCAL pos@0 time=0 lat=0 lon=0 alt=0
+DEBUG | ??:??:?? 8 [GPS] Set local position: lat=0 lon=0 time=0 timestamp=0
+DEBUG | ??:??:?? 8 [GPS] Node status update: 1 online, 1 total
+DEBUG | ??:??:?? 8 Client not yet interested in packets (state=7)
+INFO  | ??:??:?? 8 [Router] Packet History - insert: Using new slot @uptime 8.626s TRACE NEW
+DEBUG | ??:??:?? 8 [Router] handleReceived(REMOTE) (id=0x006134ec fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 8 [Router] Module 'Admin' wantsPacket=1
+INFO  | ??:??:?? 8 [Router] Received Admin from=0x0, id=0x6134ec, portnum=6, payloadlen=2
+INFO  | ??:??:?? 8 [Router] Handle admin payload 14
+INFO  | ??:??:?? 8 [Router] Client getting ringtone
+INFO  | ??:??:?? 8 [Router] *** handleGetRingtone
+DEBUG | ??:??:?? 8 [Router] Reply prepared by module 'ExternalNotificationModule' of variant: 15
+DEBUG | ??:??:?? 8 [Router] Set admin key to  ef b9 e8 46 7c ab 88 e6
+
+DEBUG | ??:??:?? 8 [Router] Send module config: canned message
+DEBUG | ??:??:?? 8 [Router] Initial packet id 1192973261
+DEBUG | ??:??:?? 8 [Router] Partially randomized packet id 478181326
+INFO  | ??:??:?? 8 [Router] Asked module 'Admin' to send a response
+DEBUG | ??:??:?? 8 [Router] Module 'routing' wantsPacket=1
+DEBUG | ??:??:?? 8 [Router] Routing sniffing (id=0x006134ec fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 8 [Router] Another module replied to this message, no need for 2nd ack
+DEBUG | ??:??:?? 8 [Router] Module 'routing' considered
+DEBUG | ??:??:?? 8 [Router] Send response (id=0x1c8077ce fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=6134ec priority=70)
+DEBUG | ??:??:?? 8 [Router] Ignore update from self
+DEBUG | ??:??:?? 8 [Router] Enqueued local (id=0x1c8077ce fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=6134ec priority=70)
+INFO  | ??:??:?? 8 [Router] tophone queue status queue is full, discard oldest
+DEBUG | ??:??:?? 8 [Router] Rx someone rebroadcasting for us (id=0x1c8077ce fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=6134ec priority=70)
+DEBUG | ??:??:?? 8 [Router] Didn't find pending packet
+INFO  | ??:??:?? 8 [Router] Packet History - insert: Using new slot @uptime 8.667s TRACE NEW
+DEBUG | ??:??:?? 8 [Router] handleReceived(REMOTE) (id=0x1c8077ce fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=6134ec priority=70)
+DEBUG | ??:??:?? 8 [Router] Module 'Admin' wantsPacket=1
+INFO  | ??:??:?? 8 [Router] Received Admin from=0xef8d4c32, id=0x1c8077ce, portnum=6, payloadlen=44
+DEBUG | ??:??:?? 8 [Router] Allow admin response message
+INFO  | ??:??:?? 8 [Router] Handle admin payload 15
+DEBUG | ??:??:?? 8 [Router] Module API did not handle admin message 15
+DEBUG | ??:??:?? 8 [Router] Module 'Admin' considered
+DEBUG | ??:??:?? 8 [Router] Module 'routing' wantsPacket=1
+DEBUG | ??:??:?? 8 [Router] Routing sniffing (id=0x1c8077ce fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=6134ec priority=70)
+DEBUG | ??:??:?? 8 [Router] Received a ACK for 0x6134ec, stopping retransmissions
+DEBUG | ??:??:?? 8 [Router] Delivering rx packet (id=0x1c8077ce fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=6134ec priority=70)
+DEBUG | ??:??:?? 8 [Router] Ignore update from self
+DEBUG | ??:??:?? 8 [Router] Forwarding to phone (id=0x1c8077ce fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=6134ec priority=70)
+DEBUG | ??:??:?? 8 [Router] Send module config: audio
+DEBUG | ??:??:?? 8 [Router] Module 'routing' considered
+INFO  | ??:??:?? 8 [UserButton] toRadioWriteCb data 0x2002da82, len 31
+DEBUG | ??:??:?? 8 [UserButton] New ToRadio packet
+DEBUG | ??:??:?? 8 [UserButton] PACKET FROM PHONE (id=0x0b2a0c0c fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 8 [UserButton] Enqueued local (id=0x0b2a0c0c fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+INFO  | ??:??:?? 8 [UserButton] tophone queue status queue is full, discard oldest
+DEBUG | ??:??:?? 8 [UserButton] Send module config: remote hardware
+DEBUG | ??:??:?? 8 Client not yet interested in packets (state=7)
+INFO  | ??:??:?? 8 [Router] Packet History - insert: Using new slot @uptime 8.829s TRACE NEW
+DEBUG | ??:??:?? 8 [Router] handleReceived(REMOTE) (id=0x0b2a0c0c fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 8 [Router] Module 'Admin' wantsPacket=1
+INFO  | ??:??:?? 8 [Router] Received Admin from=0x0, id=0xb2a0c0c, portnum=6, payloadlen=2
+INFO  | ??:??:?? 8 [Router] Handle admin payload 10
+DEBUG | ??:??:?? 8 [Router] Client getting radio canned messages
+DEBUG | ??:??:?? 8 [Router] *** handleGetCannedMessageModuleMessages
+DEBUG | ??:??:?? 8 [Router] Reply prepared by module 'canned' of variant: 11
+DEBUG | ??:??:?? 8 [Router] Set admin key to  ef b9 e8 46 7c ab 88 e6
+
+DEBUG | ??:??:?? 8 [Router] Partially randomized packet id 733390799
+INFO  | ??:??:?? 8 [Router] Asked module 'Admin' to send a response
+DEBUG | ??:??:?? 8 [Router] Module 'routing' wantsPacket=1
+DEBUG | ??:??:?? 8 [Router] Routing sniffing (id=0x0b2a0c0c fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | ??:??:?? 8 [Router] Send module config: neighbor info
+DEBUG | ??:??:?? 8 [Router] Another module replied to this message, no need for 2nd ack
+DEBUG | ??:??:?? 8 [Router] Module 'routing' considered
+DEBUG | ??:??:?? 8 [Router] Send response (id=0x2bb6a7cf fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=b2a0c0c priority=70)
+DEBUG | ??:??:?? 8 [Router] Ignore update from self
+DEBUG | ??:??:?? 8 [Router] Enqueued local (id=0x2bb6a7cf fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=b2a0c0c priority=70)
+INFO  | ??:??:?? 8 [Router] tophone queue status queue is full, discard oldest
+DEBUG | ??:??:?? 8 [Router] Rx someone rebroadcasting for us (id=0x2bb6a7cf fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=b2a0c0c priority=70
+DEBUG | ??:??:?? 8 [Router] Didn't find pending packet
+INFO  | ??:??:?? 8 [Router] Packet History - insert: Using new slot @uptime 8.869s TRACE NEW
+DEBUG | ??:??:?? 8 [Router] handleReceived(REMOTE) (id=0x2bb6a7cf fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=b2a0c0c priority=70)
+DEBUG | ??:??:?? 8 [Router] Module 'Admin' wantsPacket=1
+INFO  | ??:??:?? 8 [Router] Received Admin from=0xef8d4c32, id=0x2bb6a7cf, portnum=6, payloadlen=29
+DEBUG | ??:??:?? 8 [Router] Allow admin response message
+INFO  | ??:??:?? 8 [Router] Handle admin payload 11
+DEBUG | ??:??:?? 8 [Router] Module API did not handle admin message 11
+DEBUG | ??:??:?? 8 [Router] Module 'Admin' considered
+DEBUG | ??:??:?? 8 [Router] Module 'routing' wantsPacket=1
+DEBUG | ??:??:?? 8 [Router] Routing sniffing (id=0x2bb6a7cf fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=b2a0c0c priority=70)
+DEBUG | ??:??:?? 8 [Router] Received a ACK for 0xb2a0c0c, stopping retransmissions
+DEBUG | ??:??:?? 8 [Router] Delivering rx packet (id=0x2bb6a7cf fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=b2a0c0c priority=70)
+DEBUG | ??:??:?? 8 [Router] Ignore update from self
+DEBUG | ??:??:?? 8 [Router] Forwarding to phone (id=0x2bb6a7cf fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=b2a0c0c priority=70)
+DEBUG | ??:??:?? 8 [Router] Module 'routing' considered
+DEBUG | ??:??:?? 8 [GPS] Upgrade time to quality GPS
+WARN  | 14:29:59 8 [GPS] RTC not found (found address 0x00)
+WARN  | 14:29:59 8 [GPS] RTC not found (found address 0x00)
+DEBUG | 14:29:59 8 [GPS] Time source acquired (None -> GPS), triggering NodeInfo recheck
+DEBUG | 14:29:59 8 [GPS] NodeInfo: scheduling immediate periodic check
+DEBUG | 14:29:59 8 [GPS] Send module config: ambient lighting
+DEBUG | 14:29:59 8 [GPS] NMEA GPS time set 2026-07-27 12:29:59 age 10
+DEBUG | 14:29:59 8 Client not yet interested in packets (state=7)
+INFO  | 14:29:59 8 [NodeInfo] Send our nodeinfo to mesh (wantReplies=0)
+DEBUG | 14:29:59 8 [NodeInfo] Skip send NodeInfo since we sent it <600s ago
+DEBUG | 14:29:59 8 Send module config: detection sensor
+DEBUG | 14:29:59 9 Send module config: paxcounter
+ERROR | 14:29:59 9 Unknown module config type 14
+ERROR | 14:29:59 9 Unknown module config type 15
+ERROR | 14:29:59 9 Unknown module config type 16
+DEBUG | 14:29:59 9 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:29:59 9 File: meshtastic.txt (90) bytes
+DEBUG | 14:29:59 9 [UserButton] FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:29:59 9 [UserButton] File: transmit_history.dat (13) bytes
+DEBUG | 14:29:59 9 [UserButton] FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:29:59 9 [UserButton] File: config.proto (228) bytes
+DEBUG | 14:29:59 9 [UserButton] FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:29:59 9 [UserButton] File: module.proto (124) bytes
+DEBUG | 14:29:59 9 [UserButton] FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:29:59 9 [UserButton] File: channels.proto (57) bytes
+DEBUG | 14:29:59 9 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:29:59 9 File: device.proto (160) bytes
+DEBUG | 14:29:59 9 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:29:59 9 File: nodes.proto (286) bytes
+DEBUG | 14:29:59 9 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:29:59 9 File: Messages_default.msgs (1) bytes
+DEBUG | 14:29:59 9 FromRadio=STATE_SEND_FILEMANIFEST
+INFO  | 14:29:59 9 Config Send Complete millis=9639
+DEBUG | 14:29:59 9 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:29:59 9 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:29:59 9 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:29:59 9 phone downloaded packet (id=0x1c8077ce fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=6134ec priority=70)
+DEBUG | 14:29:59 9 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:29:59 9 phone downloaded packet (id=0x2bb6a7cf fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=b2a0c0c priority=70)
+INFO  | 14:30:01 11 toRadioWriteCb data 0x2002da82, len 8
+DEBUG | 14:30:01 11 New ToRadio packet
+DEBUG | 14:30:01 11 Got client heartbeat
+INFO  | 14:30:01 11 toRadioWriteCb data 0x2002da82, len 4
+DEBUG | 14:30:01 11 New ToRadio packet
+INFO  | 14:30:01 11 Client wants config, nonce=69421
+INFO  | 14:30:01 11 Client only wants node info, skipping other config
+INFO  | 14:30:01 11 Start API client config millis=11375
+DEBUG | 14:30:01 11 FromRadio=STATE_SEND_QUEUE_STATUS, numbytes=6
+DEBUG | 14:30:01 11 Send My NodeInfo
+INFO  | 14:30:01 11 BLE notify fromNum
+DEBUG | 14:30:01 11 Done sending 1 of 1 nodeinfos millis=11528
+DEBUG | 14:30:01 11 FromRadio=STATE_SEND_FILEMANIFEST
+INFO  | 14:30:01 11 Config Send Complete millis=11530
+INFO  | 14:30:01 11 toRadioWriteCb data 0x2002da82, len 33
+DEBUG | 14:30:01 11 New ToRadio packet
+DEBUG | 14:30:01 11 PACKET FROM PHONE (id=0x1273faad fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 priority=70)
+DEBUG | 14:30:01 11 Enqueued local (id=0x1273faad fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 rxtime=1785155401 priority=70)
+INFO  | 14:30:01 11 Tell client we have new packets 8
+INFO  | 14:30:01 11 BLE notify fromNum
+INFO  | 14:30:01 11 [Router] Packet History - insert: Using new slot @uptime 11.644s TRACE NEW
+DEBUG | 14:30:01 11 [Router] handleReceived(REMOTE) (id=0x1273faad fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 rxtime=1785155401 priority=70)
+DEBUG | 14:30:01 11 [Router] Module 'Admin' wantsPacket=1
+INFO  | 14:30:01 11 [Router] Received Admin from=0x0, id=0x1273faad, portnum=6, payloadlen=6
+INFO  | 14:30:01 11 [Router] Handle admin payload 43
+INFO  | 14:30:01 11 [Router] Client received set_time_only command
+DEBUG | 14:30:01 11 [Router] Current RTC quality: GPS. Ignore time of RTC quality of NTP
+DEBUG | 14:30:01 11 [Router] Module 'Admin' considered
+DEBUG | 14:30:01 11 [Router] Module 'routing' wantsPacket=1
+DEBUG | 14:30:01 11 [Router] Routing sniffing (id=0x1273faad fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 rxtime=1785155401 priority=70)
+DEBUG | 14:30:01 11 [Router] Partially randomized packet id 1131046864
+DEBUG | 14:30:01 11 [Router] Enqueued local (id=0x436a67d0 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=1273faad rxtime=1785155401 priority=1
+DEBUG | 14:30:01 11 [Router] Module 'routing' considered
+DEBUG | 14:30:01 11 [Router] Rx someone rebroadcasting for us (id=0x436a67d0 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=1273faad rxtime=178
+DEBUG | 14:30:01 11 [Router] Didn't find pending packet
+INFO  | 14:30:01 11 [Router] Packet History - insert: Using new slot @uptime 11.674s TRACE NEW
+DEBUG | 14:30:01 11 [Router] handleReceived(REMOTE) (id=0x436a67d0 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=1273faad rxtime=1785155401 pr
+DEBUG | 14:30:01 11 [Router] Module 'routing' wantsPacket=1
+INFO  | 14:30:01 11 [Router] Received routing from=0xef8d4c32, id=0x436a67d0, portnum=5, payloadlen=2
+DEBUG | 14:30:01 11 [Router] Routing sniffing (id=0x436a67d0 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=1273faad rxtime=1785155401 priority
+DEBUG | 14:30:01 11 [Router] FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:30:01 11 [Router] Received a ACK for 0x1273faad, stopping retransmissions
+DEBUG | 14:30:01 11 [Router] Delivering rx packet (id=0x436a67d0 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=1273faad rxtime=1785155401 prio
+DEBUG | 14:30:01 11 [Router] Ignore update from self
+DEBUG | 14:30:01 11 [Router] Forwarding to phone (id=0x436a67d0 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=1273faad rxtime=1785155401 prior
+DEBUG | 14:30:01 11 [Router] Module 'routing' considered
+INFO  | 14:30:01 11 Tell client we have new packets 9
+INFO  | 14:30:01 11 BLE notify fromNum
+DEBUG | 14:30:01 11 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:30:01 11 phone downloaded packet (id=0x436a67d0 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=1273faad rxtime=1785155401 p
+INFO  | 14:30:06 16 [UserButton] LONG PRESS RELEASE AFTER 14283 MILLIS
+INFO  | 14:30:07 17 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:08 18 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:09 19 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:10 20 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:11 21 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:12 22 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:13 23 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:14 24 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:15 25 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:16 26 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:17 27 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:18 28 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:19 29 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:20 30 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:21 31 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:30:22 32 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+DEBUG | 14:30:23 33 [GPS] Publish pos@6a674f5f:2, hasVal=1, Sats=6, GPSlock=1
+DEBUG | 14:30:23 33 [GPS] New GPS pos@6a674f5f:3 lat=52.539190 lon=13.273903 alt=58 pdop=1.98 track=287.04 speed=0.01 sats=6
+DEBUG | 14:30:23 33 [GPS] onGPSChanged() pos@6a674f5f time=1785155423 lat=525391896 lon=132739028 alt=58
+INFO  | 14:30:23 33 [GPS] updatePosition LOCAL pos@6a674f5f time=1785155423 lat=525391896 lon=132739028 alt=58
+DEBUG | 14:30:23 33 [GPS] Set local position: lat=525391896 lon=132739028 time=1785155423 timestamp=1785155423
+DEBUG | 14:30:23 33 [GPS] Node status update: 1 online, 1 total
+INFO  | 14:30:23 33 [GPS] Send pos@6a674f5f:6 to mesh (wantReplies=0)
+DEBUG | 14:30:23 33 [GPS] Send location with precision 13
+INFO  | 14:30:23 33 [GPS] Position packet: time=1785155423 lat=525598720 lon=132907008
+DEBUG | 14:30:23 33 [GPS] Partially randomized packet id 926577617
+DEBUG | 14:30:23 33 [GPS] Ignore update from self
+DEBUG | 14:30:23 33 [GPS] handleReceived(LOCAL) (id=0x373a73d1 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=3 rxtime=1785155423 priority=10)
+DEBUG | 14:30:23 33 [GPS] No modules interested in portnum=3, src=LOCAL
+INFO  | 14:30:23 33 [GPS] Packet History - insert: Using new slot @uptime 33.125s TRACE NEW
+DEBUG | 14:30:23 33 [GPS] Expand short PSK #1
+DEBUG | 14:30:23 33 [GPS] Use AES128 key!
+DEBUG | 14:30:23 33 [GPS] enqueue for send (id=0x373a73d1 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x8 encrypted len=58 rxtime=1785155423 hopStart=3 relay=0x3
+DEBUG | 14:30:23 33 [GPS] txGood=0,txRelay=0,rxGood=0,rxBad=0
+DEBUG | 14:30:23 33 [GPS] Use channel 0 (hash 0x8)
+DEBUG | 14:30:23 33 [GPS] Expand short PSK #1
+DEBUG | 14:30:23 33 [GPS] Use AES128 key!
+DEBUG | 14:30:23 33 [GPS] decoded message (id=0x373a73d1 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=3 rxtime=1785155423 hopStart=3 relay=0x32 priori
+DEBUG | 14:30:23 33 [GPS] Sent smart pos@6a674f5f:6 to mesh (distanceTraveled=5966828.500000m, minDistanceThreshold=100m, timeElapsed=33114ms, minTimeInterval=300000ms)
+DEBUG | 14:30:23 33 [GPS] Took 31s to get lock
+DEBUG | 14:30:23 33 [GPS] Predict 0s to get next lock
+DEBUG | 14:30:23 33 [GPS] 119s until next search
+DEBUG | 14:30:23 33 [GPS] gps_update_interval >= 0s needed to justify hardsleep
+INFO  | 14:30:23 33 [GPS] GPS power state move from ACTIVE to HARDSLEEP
+INFO  | 14:30:23 33 Tell client we have new packets 11
+INFO  | 14:30:23 33 BLE notify fromNum
+DEBUG | 14:30:23 33 [RadioIf] FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:30:23 33 [RadioIf] Started Tx (id=0x373a73d1 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x8 encrypted len=58 rxtime=1785155423 hopStart=3 relay=0x32 prio
+DEBUG | 14:30:23 33 [RadioIf] 0 packets remain in the TX queue
+DEBUG | 14:30:23 33 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:30:23 33 phone downloaded packet (id=0x373a73d1 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=3 rxtime=1785155423 hopStart=3 relay=0x3
+DEBUG | 14:30:24 33 [RadioIf] Packet TX: 681ms
+DEBUG | 14:30:24 33 [RadioIf] Completed sending (id=0x373a73d1 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x8 encrypted len=58 rxtime=1785155423 hopStart=3 relay=0x
+DEBUG | 14:30:50 60 SX126x AGC reset: warm sleep + Calibrate(0x7F)
+INFO  | 14:30:52 62 [DeviceTelemetry] Send: air_util_tx=0.018917, channel_utilization=1.135000, battery_level=101, voltage=4.271000, uptime=62
+DEBUG | 14:30:52 62 [DeviceTelemetry] Partially randomized packet id 2808796114
+DEBUG | 14:30:52 62 [DeviceTelemetry] updateTelemetry LOCAL
+DEBUG | 14:30:52 62 [DeviceTelemetry] Node status update: 1 online, 1 total
+INFO  | 14:30:52 62 [DeviceTelemetry] Send packet to phone
+DEBUG | 14:30:52 62 [DeviceTelemetry] Noise floor: -96 dBm (samples: 1, latest: -96 dBm)
+INFO  | 14:30:52 62 [DeviceTelemetry] Sending local stats: uptime=62, channel_utilization=1.135000, air_util_tx=0.018917, num_online_nodes=1, num_total_nodes=1, noise_floor=-96
+INFO  | 14:30:52 62 [DeviceTelemetry] num_packets_tx=1, num_packets_rx=0, num_packets_rx_bad=0
+DEBUG | 14:30:52 62 [DeviceTelemetry] Partially randomized packet id 2712685523
+INFO  | 14:30:52 62 Tell client we have new packets 13
+INFO  | 14:30:52 62 BLE notify fromNum
+DEBUG | 14:30:52 62 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:30:52 62 phone downloaded packet (id=0xa76ad3d2 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=67 rxtime=1785155452 priority=10)
+DEBUG | 14:30:52 62 [Power] Battery: usbPower=1, isCharging=1, batMv=4289, batPct=100
+DEBUG | 14:30:52 62 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:30:52 62 phone downloaded packet (id=0xa1b04bd3 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=67 rxtime=1785155452 priority=10)
+DEBUG | 14:31:50 120 SX126x AGC reset: warm sleep + Calibrate(0x7F)
+INFO  | 14:31:52 122 [DeviceTelemetry] Send: air_util_tx=0.018917, channel_utilization=0.000000, battery_level=101, voltage=4.292000, uptime=122
+DEBUG | 14:31:52 122 [DeviceTelemetry] Partially randomized packet id 2837271508
+DEBUG | 14:31:52 122 [DeviceTelemetry] updateTelemetry LOCAL
+DEBUG | 14:31:52 122 [DeviceTelemetry] Node status update: 1 online, 1 total
+INFO  | 14:31:52 122 [DeviceTelemetry] Send packet to phone
+INFO  | 14:31:52 122 Tell client we have new packets 14
+INFO  | 14:31:52 122 BLE notify fromNum
+��@INFO  | ??:??:?? 4
+
+//\ E S H T /\ S T / C
+
+DEBUG | ??:??:?? 4 Filesystem files:
+DEBUG | ??:??:?? 4    meshtastic.txt (90 Bytes)
+DEBUG | ??:??:?? 4  adafruit (directory)
+DEBUG | ??:??:?? 4  bond_prph (directory)
+DEBUG | ??:??:?? 4  bond_cntr (directory)
+DEBUG | ??:??:?? 4  prefs (directory)
+DEBUG | ??:??:?? 4    transmit_history.dat (13 Bytes)
+DEBUG | ??:??:?? 4    config.proto (228 Bytes)
+DEBUG | ??:??:?? 4    channels.proto (57 Bytes)
+DEBUG | ??:??:?? 4    device.proto (160 Bytes)
+DEBUG | ??:??:?? 4    nodes.proto (286 Bytes)
+DEBUG | ??:??:?? 4    module.proto (126 Bytes)
+DEBUG | ??:??:?? 4    Messages_default.msgs (1 Bytes)
+DEBUG | ??:??:?? 4 Power::max17048Init lipo sensor is not ready yet
+DEBUG | ??:??:?? 4 Use analog input 5 for battery level
+INFO  | ??:??:?? 4 Scan for i2c devices
+DEBUG | ??:??:?? 4 Scan for I2C devices on port 1
+INFO  | ??:??:?? 4 DFRobot Rain Gauge found at address 0x1d
+INFO  | ??:??:?? 4 1 I2C devices found
+DEBUG | ??:??:?? 4 acc_info = 0
+DEBUG | ??:??:?? 4 mag_info = 0
+INFO  | ??:??:?? 4 S:B:9,2.7.26.54e0d8d,rak4631,meshtastic/firmware
+INFO  | ??:??:?? 4 Build timestamp: 1782259200
+DEBUG | ??:??:?? 4 Reset reason: 0x0
+ERROR | ??:??:?? 4 No radio instance available to provide entropy
+DEBUG | ??:??:?? 4 Set random seed 2791416518
+INFO  | ??:??:?? 4 Init NodeDB
+INFO  | ??:??:?? 4 Load /prefs/nodes.proto
+INFO  | ??:??:?? 4 Loaded /prefs/nodes.proto successfully
+INFO  | ??:??:?? 4 Loaded saved nodedatabase version 24, with nodes count: 1
+INFO  | ??:??:?? 4 Load /prefs/device.proto
+INFO  | ??:??:?? 4 Loaded /prefs/device.proto successfully
+INFO  | ??:??:?? 4 Loaded saved devicestate version 24
+INFO  | ??:??:?? 4 Load /prefs/config.proto
+INFO  | ??:??:?? 4 Loaded /prefs/config.proto successfully
+INFO  | ??:??:?? 4 Loaded saved config version 24
+INFO  | ??:??:?? 4 Load /prefs/module.proto
+INFO  | ??:??:?? 4 Loaded /prefs/module.proto successfully
+INFO  | ??:??:?? 4 Loaded saved moduleConfig version 24
+INFO  | ??:??:?? 4 Load /prefs/channels.proto
+INFO  | ??:??:?? 4 Loaded /prefs/channels.proto successfully
+INFO  | ??:??:?? 4 Loaded saved channelFile version 24
+ERROR | ??:??:?? 4 Could not open / read /prefs/uiconfig.proto
+DEBUG | ??:??:?? 4 cleanupMeshDB purged 0 entries
+DEBUG | ??:??:?? 4 Use nodenum 0xef8d4c32
+DEBUG | ??:??:?? 4 Expand short PSK #1
+INFO  | ??:??:?? 4 Wanted region 3, using EU_868
+DEBUG | ??:??:?? 4 Coerce telemetry to role-aware minimum on defaults
+DEBUG | ??:??:?? 4 Coerce position broadcasts to role-aware minimum and smart broadcast min of 5 minutes on defaults
+INFO  | ??:??:?? 4 Sort took 0 milliseconds
+DEBUG | ??:??:?? 4 Save to disk 0
+INFO  | ??:??:?? 4 TransmitHistory: loaded 1 entries from disk
+WARN  | ??:??:?? 4 Packet History - Invalid size -1, using default 160
+DEBUG | ??:??:?? 5 Use compiled/slipstreamed tzplaceholder
+DEBUG | ??:??:?? 5 Saved TZ: MEZ-1MESZ,M3.4.0/2:00:00,M10.4.0/3:00:00
+DEBUG | ??:??:?? 5 Set Timezone to MEZ-1MESZ,M3.4.0/2:00:00,M10.4.0/3:00:00
+WARN  | ??:??:?? 5 RTC not found (found address 0x00)
+INFO  | ??:??:?? 5 GPS power state move from OFF to ACTIVE
+DEBUG | ??:??:?? 5 Use GPIO15 for GPS RX
+DEBUG | ??:??:?? 5 Use GPIO16 for GPS TX
+ERROR | ??:??:?? 5 Could not open / read /prefs/cannedConf.proto
+INFO  | ??:??:?? 5 CannedMessageModule is enabled
+ERROR | ??:??:?? 5 Could not open / read /prefs/ringtone.proto
+INFO  | ??:??:?? 5 Init External Notification Module
+INFO  | ??:??:?? 5 Use Pin 36 in digital mode
+DEBUG | ??:??:?? 5 Init NCP5623 Ambient light w/ current=10.000000, red=0, green=0, blue=0
+INFO  | ??:??:?? 5 Use Pin 21 in PWM mode
+DEBUG | ??:??:?? 5 Rescan for I2C keyboard
+DEBUG | ??:??:?? 5 Scan for I2C devices on port 1
+DEBUG | ??:??:?? 5 Scan address 0x1f
+DEBUG | ??:??:?? 5 Scan address 0x34
+DEBUG | ??:??:?? 5 Scan address 0x55
+DEBUG | ??:??:?? 5 Scan address 0x5a
+DEBUG | ??:??:?? 5 Scan address 0x5f
+DEBUG | ??:??:?? 5 SX126xInterface(cs=42, irq=47, rst=38, busy=46)
+DEBUG | ??:??:?? 5 SX126X_DIO3_TCXO_VOLTAGE defined, using DIO3 as TCXO reference voltage at 1.800000 V
+INFO  | ??:??:?? 5 Start meshradio init
+INFO  | ??:??:?? 5 Radio freq=869.525, config.lora.frequency_offset=0.000
+INFO  | ??:??:?? 5 Set radio: region=EU_868, name=LongFast, config=0, ch=0, power=27
+INFO  | ??:??:?? 5 myRegion->freqStart -> myRegion->freqEnd: 869.400024 -> 869.650024 (0.250000 MHz)
+INFO  | ??:??:?? 5 numChannels: 1 x 250.000kHz
+INFO  | ??:??:?? 5 channel_num: 1
+INFO  | ??:??:?? 5 frequency: 869.525024
+INFO  | ??:??:?? 5 Slot time: 28 msec, preamble time: 131 msec
+INFO  | ??:??:?? 5 Final Tx power: 22 dBm
+INFO  | ??:??:?? 5 SX126x init result 0
+INFO  | ??:??:?? 5 Frequency set to 869.525024
+INFO  | ??:??:?? 5 Bandwidth set to 250.000000
+INFO  | ??:??:?? 5 Power output set to 22
+DEBUG | ??:??:?? 5 Current limit set to 140.000000
+DEBUG | ??:??:?? 5 Current limit set result 0
+DEBUG | ??:??:?? 5 Set DIO2 as RF switch, result: 0
+DEBUG | ??:??:?? 5 SX126X_RXEN not defined, defaulting to RADIOLIB_NC
+DEBUG | ??:??:?? 5 SX126X_TXEN not defined, defaulting to RADIOLIB_NC
+DEBUG | ??:??:?? 5 Use MCU pin -1 as RXEN and pin -1 as TXEN to control RF switching
+INFO  | ??:??:?? 5 Set RX gain to boosted mode; result: 0
+INFO  | ??:??:?? 5 Applied SX1262 register 0x8B5 patch for RX improvement
+INFO  | ??:??:?? 5 SX1262 init success
+INFO  | ??:??:?? 5 Not using Ethernet
+DEBUG | ??:??:?? 5 LoRA bitrate = 116.967873 bytes / sec
+INFO  | ??:??:?? 5 PowerFSM init, USB power=1
+DEBUG | ??:??:?? 5 Node status update: 1 online, 1 total
+INFO  | ??:??:?? 5 [Power] Power: battery hardware detected
+WARN  | ??:??:?? 5 [DetectionSensor] Detection Sensor Module: Set to enabled but no monitor pin is set. Disable module
+INFO  | ??:??:?? 5 [ExternalNotification] Turning off external notification:
+INFO  | ??:??:?? 5 [ExternalNotification] Stop RTTTL playback
+INFO  | ??:??:?? 5 [ExternalNotification] Turning off setExternalStates
+DEBUG | ??:??:?? 5 [ExternalNotification] Init NCP5623 Ambient light w/ current=10.000000, red=0, green=0, blue=0
+DEBUG | ??:??:?? 5 [ExternalNotification] Init NCP5623 Ambient light w/ current=10.000000, red=0, green=0, blue=0
+DEBUG | ??:??:?? 5 [ExternalNotification] Init NCP5623 Ambient light w/ current=10.000000, red=0, green=0, blue=0
+DEBUG | ??:??:?? 5 [GPS] Trying $PDTINFO (Unicore Family)...
+DEBUG | ??:??:?? 5 [GPS] Trying $PCAS06,1*1A (ATGM33xx Family)...
+DEBUG | ??:??:?? 6 [GPS] Trying $PAIR021*39 (Airoha Family)...
+DEBUG | ??:??:?? 7 [GPS] Trying $PQTMVERNO*58 (LC86)...
+DEBUG | ??:??:?? 8 [GPS] Trying $PCAS06,0*1B (L76K)...
+DEBUG | ??:??:?? 8 [PowerFSM] Init NRF52 Bluetooth
+INFO  | ??:??:?? 8 [PowerFSM] Init the Bluefruit nRF52 module
+INFO  | ??:??:?? 8 [PowerFSM] Bluetooth pin set to '123456'
+INFO  | ??:??:?? 8 [PowerFSM] Init the Device Information Service
+INFO  | ??:??:?? 8 [PowerFSM] Init the Battery Service
+INFO  | ??:??:?? 8 [PowerFSM] Init the Mesh bluetooth service
+INFO  | ??:??:?? 8 [PowerFSM] Set up the advertising payload(s)
+INFO  | ??:??:?? 8 [PowerFSM] Advertise
+DEBUG | ??:??:?? 8 [GPS] Trying $PMTK605*31 (MTK Family)...
+INFO  | ??:??:?? 9 [GPS] BLE Connected to Tensor
+DEBUG | ??:??:?? 9 [GPS] BluetoothStatus CONNECTED
+INFO  | ??:??:?? 9 [GPS] BLE connection secured
+DEBUG | ??:??:?? 9 [GPS] Module Info :
+DEBUG | ??:??:?? 9 [GPS] Soft version: ROM CORE 3.01 (107888)
+DEBUG | ??:??:?? 9 [GPS] Hard version: 00080000
+DEBUG | ??:??:?? 9 [GPS] Extensions:4
+DEBUG | ??:??:?? 9 [GPS]   FWVER=SPG 3.01
+DEBUG | ??:??:?? 9 [GPS]   PROTVER=18.00
+DEBUG | ??:??:?? 9 [GPS]   GPS;GLO;GAL;BDS
+DEBUG | ??:??:?? 9 [GPS]   SBAS;IMES;QZSS
+DEBUG | ??:??:?? 9 [GPS] Protocol Version:18.00
+DEBUG | ??:??:?? 9 [GPS] ProtVer=18
+INFO  | ??:??:?? 9 [GPS] U-blox 8 detected
+INFO  | ??:??:?? 9 [GPS] GPS+SBAS+GLONASS+Galileo configured
+INFO  | ??:??:?? 10 [GPS] CCCD Updated: 1
+INFO  | ??:??:?? 10 [GPS] Notify/Indicate enabled
+INFO  | ??:??:?? 10 [GPS] CCCD Updated: 1
+INFO  | ??:??:?? 10 [GPS] Notify/Indicate enabled
+INFO  | ??:??:?? 10 [GPS] toRadioWriteCb data 0x2002db2a, len 8
+DEBUG | ??:??:?? 10 [GPS] New ToRadio packet
+DEBUG | ??:??:?? 10 [GPS] Got client heartbeat
+INFO  | ??:??:?? 10 [GPS] toRadioWriteCb data 0x2002db2a, len 4
+DEBUG | ??:??:?? 10 [GPS] New ToRadio packet
+INFO  | ??:??:?? 10 [GPS] Client wants config, nonce=69420
+DEBUG | ??:??:?? 10 [GPS] Got zu files in manifest
+INFO  | ??:??:?? 10 [GPS] Start API client config millis=10517
+DEBUG | ??:??:?? 10 [GPS] FromRadio=STATE_SEND_QUEUE_STATUS, numbytes=6
+DEBUG | ??:??:?? 10 [GPS] FromRadio=STATE_SEND_MY_INFO
+INFO  | ??:??:?? 10 [GPS] getFromRadio=STATE_SEND_UIDATA
+DEBUG | ??:??:?? 10 [GPS] Send My NodeInfo
+DEBUG | ??:??:?? 10 [GPS] Send device metadata
+DEBUG | ??:??:?? 11 [GPS] Send channels 8
+DEBUG | ??:??:?? 11 [GPS] Send config: device
+DEBUG | ??:??:?? 11 [GPS] Send config: position
+DEBUG | ??:??:?? 11 [GPS] Send config: power
+DEBUG | ??:??:?? 11 [GPS] Send config: network
+DEBUG | ??:??:?? 11 [GPS] Send config: display
+INFO  | ??:??:?? 11 [GPS] GNSS module configuration saved!
+DEBUG | ??:??:?? 11 [GPS] Publish pos@0:2, hasVal=0, Sats=0, GPSlock=0
+DEBUG | ??:??:?? 11 [GPS] No GPS lock
+DEBUG | ??:??:?? 11 [GPS] onGPSChanged() pos@0 time=0 lat=0 lon=0 alt=0
+INFO  | ??:??:?? 11 [GPS] updatePosition LOCAL pos@0 time=0 lat=0 lon=0 alt=0
+DEBUG | ??:??:?? 11 [GPS] Set local position: lat=0 lon=0 time=0 timestamp=0
+DEBUG | ??:??:?? 11 [GPS] Node status update: 1 online, 1 total
+DEBUG | ??:??:?? 11 [UserButton] Send config: lora
+DEBUG | ??:??:?? 11 [UserButton] Send config: bluetooth
+DEBUG | ??:??:?? 11 [UserButton] Send config: security
+DEBUG | ??:??:?? 11 Send config: sessionkey
+DEBUG | ??:??:?? 11 [GPS] Upgrade time to quality GPS
+WARN  | 14:32:19 11 [GPS] RTC not found (found address 0x00)
+WARN  | 14:32:19 11 [GPS] RTC not found (found address 0x00)
+DEBUG | 14:32:19 11 [GPS] Time source acquired (None -> GPS), triggering NodeInfo recheck
+DEBUG | 14:32:19 11 [GPS] NodeInfo: scheduling immediate periodic check
+DEBUG | 14:32:19 11 [GPS] NMEA GPS time set 2026-07-27 12:32:19 age 7
+INFO  | 14:32:19 11 [NodeInfo] Send our nodeinfo to mesh (wantReplies=0)
+DEBUG | 14:32:19 11 [NodeInfo] Skip send NodeInfo since we sent it <600s ago
+DEBUG | 14:32:19 11 Send module config: mqtt
+DEBUG | 14:32:19 11 Send module config: serial
+DEBUG | 14:32:19 11 Send module config: ext notification
+DEBUG | 14:32:19 11 Send module config: store forward
+INFO  | 14:32:19 11 toRadioWriteCb data 0x2002db2a, len 31
+DEBUG | 14:32:19 11 New ToRadio packet
+DEBUG | 14:32:19 11 PACKET FROM PHONE (id=0x61ddf219 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | 14:32:19 11 Enqueued local (id=0x61ddf219 fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP rxtime=1785155539 priority=70)
+DEBUG | 14:32:19 11 Client not yet interested in packets (state=7)
+INFO  | 14:32:19 11 [Router] Packet History - insert: Using new slot @uptime 11.995s TRACE NEW
+DEBUG | 14:32:19 11 [Router] handleReceived(REMOTE) (id=0x61ddf219 fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP rxtime=1785155539 priority=70)
+DEBUG | 14:32:19 12 [Router] Module 'Admin' wantsPacket=1
+INFO  | 14:32:19 12 [Router] Received Admin from=0x0, id=0x61ddf219, portnum=6, payloadlen=2
+INFO  | 14:32:19 12 [Router] Handle admin payload 14
+INFO  | 14:32:19 12 [Router] Client getting ringtone
+INFO  | 14:32:19 12 [Router] *** handleGetRingtone
+DEBUG | 14:32:19 12 [Router] Reply prepared by module 'ExternalNotificationModule' of variant: 15
+DEBUG | 14:32:19 12 [Router] Set admin key to  9c ad ad af 27 c7 10 13
+
+DEBUG | 14:32:19 12 [Router] Initial packet id 1585870836
+DEBUG | 14:32:19 12 [Router] Partially randomized packet id 1916632053
+INFO  | 14:32:19 12 [Router] Asked module 'Admin' to send a response
+DEBUG | 14:32:19 12 [Router] Module 'routing' wantsPacket=1
+DEBUG | 14:32:19 12 [Router] Routing sniffing (id=0x61ddf219 fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP rxtime=1785155539 priority=70)
+DEBUG | 14:32:19 12 [Router] Another module replied to this message, no need for 2nd ack
+DEBUG | 14:32:19 12 [Router] Module 'routing' considered
+DEBUG | 14:32:19 12 [Router] Send response (id=0x723d7bf5 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=61ddf219 rxtime=1785155539 priority=70
+DEBUG | 14:32:19 12 [Router] Ignore update from self
+DEBUG | 14:32:19 12 [Router] Enqueued local (id=0x723d7bf5 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=61ddf219 rxtime=1785155539 priority=7
+INFO  | 14:32:19 12 [Router] tophone queue status queue is full, discard oldest
+DEBUG | 14:32:19 12 [Router] Rx someone rebroadcasting for us (id=0x723d7bf5 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=61ddf219 rxtime=178
+DEBUG | 14:32:19 12 [Router] Send module config: range test
+DEBUG | 14:32:19 12 [Router] Didn't find pending packet
+INFO  | 14:32:19 12 [Router] Packet History - insert: Using new slot @uptime 12.040s TRACE NEW
+DEBUG | 14:32:19 12 [Router] handleReceived(REMOTE) (id=0x723d7bf5 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=61ddf219 rxtime=1785155539 pr
+DEBUG | 14:32:19 12 [Router] Module 'Admin' wantsPacket=1
+INFO  | 14:32:19 12 [Router] Received Admin from=0xef8d4c32, id=0x723d7bf5, portnum=6, payloadlen=44
+DEBUG | 14:32:19 12 [Router] Allow admin response message
+INFO  | 14:32:19 12 [Router] Handle admin payload 15
+DEBUG | 14:32:19 12 [Router] Module API did not handle admin message 15
+DEBUG | 14:32:19 12 [Router] Module 'Admin' considered
+DEBUG | 14:32:19 12 [Router] Module 'routing' wantsPacket=1
+DEBUG | 14:32:19 12 [Router] Routing sniffing (id=0x723d7bf5 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=61ddf219 rxtime=1785155539 priority
+DEBUG | 14:32:19 12 [Router] Received a ACK for 0x61ddf219, stopping retransmissions
+DEBUG | 14:32:19 12 [Router] Delivering rx packet (id=0x723d7bf5 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=61ddf219 rxtime=1785155539 prio
+DEBUG | 14:32:19 12 [Router] Ignore update from self
+DEBUG | 14:32:19 12 [Router] Forwarding to phone (id=0x723d7bf5 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=61ddf219 rxtime=1785155539 prior
+DEBUG | 14:32:19 12 [Router] Module 'routing' considered
+DEBUG | 14:32:19 12 Client not yet interested in packets (state=7)
+DEBUG | 14:32:19 12 [UserButton] Send module config: telemetry
+DEBUG | 14:32:19 12 [UserButton] Send module config: canned message
+DEBUG | 14:32:19 12 [UserButton] Send module config: audio
+INFO  | 14:32:19 12 [UserButton] toRadioWriteCb data 0x2002db2a, len 31
+DEBUG | 14:32:19 12 [UserButton] New ToRadio packet
+DEBUG | 14:32:19 12 [UserButton] PACKET FROM PHONE (id=0x53c72783 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP priority=70)
+DEBUG | 14:32:19 12 [UserButton] Enqueued local (id=0x53c72783 fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP rxtime=1785155539 priority=70)
+INFO  | 14:32:19 12 [UserButton] tophone queue status queue is full, discard oldest
+DEBUG | 14:32:19 12 Client not yet interested in packets (state=7)
+INFO  | 14:32:19 12 [Router] Packet History - insert: Using new slot @uptime 12.267s TRACE NEW
+DEBUG | 14:32:19 12 [Router] handleReceived(REMOTE) (id=0x53c72783 fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP rxtime=1785155539 priority=70)
+DEBUG | 14:32:19 12 [Router] Module 'Admin' wantsPacket=1
+INFO  | 14:32:19 12 [Router] Received Admin from=0x0, id=0x53c72783, portnum=6, payloadlen=2
+INFO  | 14:32:19 12 [Router] Handle admin payload 10
+DEBUG | 14:32:19 12 [Router] Client getting radio canned messages
+DEBUG | 14:32:19 12 [Router] *** handleGetCannedMessageModuleMessages
+DEBUG | 14:32:19 12 [Router] Reply prepared by module 'canned' of variant: 11
+DEBUG | 14:32:19 12 [Router] Set admin key to  9c ad ad af 27 c7 10 13
+
+DEBUG | 14:32:19 12 [Router] Partially randomized packet id 3885610998
+INFO  | 14:32:19 12 [Router] Asked module 'Admin' to send a response
+DEBUG | 14:32:19 12 [Router] Module 'routing' wantsPacket=1
+DEBUG | 14:32:19 12 [Router] Routing sniffing (id=0x53c72783 fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 WANTRESP rxtime=1785155539 priority=70)
+DEBUG | 14:32:19 12 [Router] Another module replied to this message, no need for 2nd ack
+DEBUG | 14:32:19 12 [Router] Module 'routing' considered
+DEBUG | 14:32:19 12 [Router] Send response (id=0xe799b7f6 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=53c72783 rxtime=1785155539 priority=70
+DEBUG | 14:32:19 12 [Router] Ignore update from self
+DEBUG | 14:32:19 12 [Router] Send module config: remote hardware
+DEBUG | 14:32:19 12 [Router] Enqueued local (id=0xe799b7f6 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=53c72783 rxtime=1785155539 priority=7
+INFO  | 14:32:19 12 [Router] tophone queue status queue is full, discard oldest
+DEBUG | 14:32:19 12 [Router] Rx someone rebroadcasting for us (id=0xe799b7f6 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=53c72783 rxtime=178
+DEBUG | 14:32:19 12 [Router] Didn't find pending packet
+INFO  | 14:32:19 12 [Router] Packet History - insert: Using new slot @uptime 12.311s TRACE NEW
+DEBUG | 14:32:19 12 [Router] handleReceived(REMOTE) (id=0xe799b7f6 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=53c72783 rxtime=1785155539 pr
+DEBUG | 14:32:19 12 [Router] Module 'Admin' wantsPacket=1
+INFO  | 14:32:19 12 [Router] Received Admin from=0xef8d4c32, id=0xe799b7f6, portnum=6, payloadlen=29
+DEBUG | 14:32:19 12 [Router] Allow admin response message
+INFO  | 14:32:19 12 [Router] Handle admin payload 11
+DEBUG | 14:32:19 12 [Router] Module API did not handle admin message 11
+DEBUG | 14:32:19 12 [Router] Module 'Admin' considered
+DEBUG | 14:32:19 12 [Router] Module 'routing' wantsPacket=1
+DEBUG | 14:32:19 12 [Router] Routing sniffing (id=0xe799b7f6 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=53c72783 rxtime=1785155539 priority
+DEBUG | 14:32:19 12 [Router] Received a ACK for 0x53c72783, stopping retransmissions
+DEBUG | 14:32:19 12 [Router] Delivering rx packet (id=0xe799b7f6 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=53c72783 rxtime=1785155539 prio
+DEBUG | 14:32:19 12 [Router] Ignore update from self
+DEBUG | 14:32:19 12 [Router] Forwarding to phone (id=0xe799b7f6 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=53c72783 rxtime=1785155539 prior
+DEBUG | 14:32:19 12 [Router] Module 'routing' considered
+DEBUG | 14:32:19 12 Client not yet interested in packets (state=7)
+DEBUG | 14:32:19 12 Send module config: neighbor info
+DEBUG | 14:32:19 12 Send module config: ambient lighting
+DEBUG | 14:32:19 12 Send module config: detection sensor
+DEBUG | 14:32:19 12 Send module config: paxcounter
+ERROR | 14:32:19 12 Unknown module config type 14
+ERROR | 14:32:19 12 Unknown module config type 15
+ERROR | 14:32:19 12 Unknown module config type 16
+DEBUG | 14:32:20 12 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:32:20 12 File: meshtastic.txt (90) bytes
+DEBUG | 14:32:20 12 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:32:20 12 File: transmit_history.dat (13) bytes
+DEBUG | 14:32:20 12 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:32:20 12 File: config.proto (228) bytes
+DEBUG | 14:32:20 12 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:32:20 12 File: channels.proto (57) bytes
+DEBUG | 14:32:20 12 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:32:20 12 File: device.proto (160) bytes
+DEBUG | 14:32:20 13 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:32:20 13 File: nodes.proto (286) bytes
+DEBUG | 14:32:20 13 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:32:20 13 File: module.proto (126) bytes
+DEBUG | 14:32:20 13 FromRadio=STATE_SEND_FILEMANIFEST
+DEBUG | 14:32:20 13 File: Messages_default.msgs (1) bytes
+DEBUG | 14:32:20 13 FromRadio=STATE_SEND_FILEMANIFEST
+INFO  | 14:32:20 13 Config Send Complete millis=13166
+DEBUG | 14:32:20 13 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:32:20 13 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:32:20 13 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:32:20 13 phone downloaded packet (id=0x723d7bf5 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=61ddf219 rxtime=1785155539 p
+DEBUG | 14:32:20 13 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:32:20 13 phone downloaded packet (id=0xe799b7f6 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=6 requestId=53c72783 rxtime=1785155539 p
+INFO  | 14:32:22 14 toRadioWriteCb data 0x2002db2a, len 8
+DEBUG | 14:32:22 14 New ToRadio packet
+DEBUG | 14:32:22 14 Got client heartbeat
+INFO  | 14:32:22 15 toRadioWriteCb data 0x2002db2a, len 4
+DEBUG | 14:32:22 15 New ToRadio packet
+INFO  | 14:32:22 15 Client wants config, nonce=69421
+INFO  | 14:32:22 15 Client only wants node info, skipping other config
+INFO  | 14:32:22 15 Start API client config millis=15034
+DEBUG | 14:32:22 15 FromRadio=STATE_SEND_QUEUE_STATUS, numbytes=6
+DEBUG | 14:32:22 15 Send My NodeInfo
+INFO  | 14:32:22 15 BLE notify fromNum
+DEBUG | 14:32:22 15 Done sending 1 of 1 nodeinfos millis=15186
+DEBUG | 14:32:22 15 FromRadio=STATE_SEND_FILEMANIFEST
+INFO  | 14:32:22 15 Config Send Complete millis=15189
+INFO  | 14:32:22 15 toRadioWriteCb data 0x2002db2a, len 33
+DEBUG | 14:32:22 15 New ToRadio packet
+DEBUG | 14:32:22 15 PACKET FROM PHONE (id=0x13b5ef2d fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 priority=70)
+DEBUG | 14:32:22 15 Enqueued local (id=0x13b5ef2d fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 rxtime=1785155542 priority=70)
+INFO  | 14:32:22 15 Tell client we have new packets 8
+INFO  | 14:32:22 15 BLE notify fromNum
+INFO  | 14:32:22 15 [Router] Packet History - insert: Using new slot @uptime 15.302s TRACE NEW
+DEBUG | 14:32:22 15 [Router] handleReceived(REMOTE) (id=0x13b5ef2d fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 rxtime=1785155542 priority=70)
+DEBUG | 14:32:22 15 [Router] Module 'Admin' wantsPacket=1
+INFO  | 14:32:22 15 [Router] Received Admin from=0x0, id=0x13b5ef2d, portnum=6, payloadlen=6
+INFO  | 14:32:22 15 [Router] Handle admin payload 43
+INFO  | 14:32:22 15 [Router] Client received set_time_only command
+DEBUG | 14:32:22 15 [Router] Current RTC quality: GPS. Ignore time of RTC quality of NTP
+DEBUG | 14:32:22 15 [Router] Module 'Admin' considered
+DEBUG | 14:32:22 15 [Router] Module 'routing' wantsPacket=1
+DEBUG | 14:32:22 15 [Router] Routing sniffing (id=0x13b5ef2d fr=0x00000000 to=0xef8d4c32, transport = 0, WantAck=1, HopLim=0 Ch=0x0 Portnum=6 rxtime=1785155542 priority=70)
+DEBUG | 14:32:22 15 [Router] Partially randomized packet id 76434423
+DEBUG | 14:32:22 15 [Router] Enqueued local (id=0x048e4bf7 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=13b5ef2d rxtime=1785155542 priority=1
+DEBUG | 14:32:22 15 [Router] Module 'routing' considered
+DEBUG | 14:32:22 15 [Router] Rx someone rebroadcasting for us (id=0x048e4bf7 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=13b5ef2d rxtime=178
+DEBUG | 14:32:22 15 [Router] Didn't find pending packet
+INFO  | 14:32:22 15 [Router] Packet History - insert: Using new slot @uptime 15.333s TRACE NEW
+DEBUG | 14:32:22 15 [Router] handleReceived(REMOTE) (id=0x048e4bf7 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=13b5ef2d rxtime=1785155542 pr
+DEBUG | 14:32:22 15 [Router] Module 'routing' wantsPacket=1
+INFO  | 14:32:22 15 [Router] Received routing from=0xef8d4c32, id=0x48e4bf7, portnum=5, payloadlen=2
+DEBUG | 14:32:22 15 [Router] Routing sniffing (id=0x048e4bf7 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=13b5ef2d rxtime=1785155542 priority
+DEBUG | 14:32:22 15 [Router] FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:32:22 15 [Router] Received a ACK for 0x13b5ef2d, stopping retransmissions
+DEBUG | 14:32:22 15 [Router] Delivering rx packet (id=0x048e4bf7 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=13b5ef2d rxtime=1785155542 prio
+DEBUG | 14:32:22 15 [Router] Ignore update from self
+DEBUG | 14:32:22 15 [Router] Forwarding to phone (id=0x048e4bf7 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=13b5ef2d rxtime=1785155542 prior
+DEBUG | 14:32:22 15 [Router] Module 'routing' considered
+INFO  | 14:32:22 15 Tell client we have new packets 9
+INFO  | 14:32:22 15 BLE notify fromNum
+DEBUG | 14:32:22 15 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:32:22 15 phone downloaded packet (id=0x048e4bf7 fr=0xef8d4c32 to=0xef8d4c32, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=5 requestId=13b5ef2d rxtime=1785155542 p
+INFO  | 14:32:24 17 [UserButton] LONG PRESS RELEASE AFTER 12091 MILLIS
+INFO  | 14:32:25 18 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:26 19 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:27 20 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:28 21 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:29 22 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:30 23 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:31 24 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:32 25 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:33 26 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:34 27 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:35 28 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:36 29 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:37 30 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:38 31 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:39 32 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:40 33 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:41 34 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:42 35 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+INFO  | 14:32:43 36 [UserButton] LONG PRESS RELEASE AFTER 899 MILLIS
+DEBUG | 14:32:44 36 [GPS] Publish pos@6a674fec:2, hasVal=1, Sats=6, GPSlock=1
+DEBUG | 14:32:44 36 [GPS] New GPS pos@6a674fec:3 lat=52.539218 lon=13.274041 alt=52 pdop=2.01 track=279.43 speed=0.01 sats=6
+DEBUG | 14:32:44 36 [GPS] onGPSChanged() pos@6a674fec time=1785155564 lat=525392176 lon=132740408 alt=52
+INFO  | 14:32:44 36 [GPS] updatePosition LOCAL pos@6a674fec time=1785155564 lat=525392176 lon=132740408 alt=52
+DEBUG | 14:32:44 36 [GPS] Set local position: lat=525392176 lon=132740408 time=1785155564 timestamp=1785155564
+DEBUG | 14:32:44 36 [GPS] Node status update: 1 online, 1 total
+INFO  | 14:32:44 36 [GPS] Send pos@6a674fec:6 to mesh (wantReplies=0)
+DEBUG | 14:32:44 36 [GPS] Send location with precision 13
+INFO  | 14:32:44 36 [GPS] Position packet: time=1785155564 lat=525598720 lon=132907008
+DEBUG | 14:32:44 36 [GPS] Partially randomized packet id 128987128
+DEBUG | 14:32:44 36 [GPS] Ignore update from self
+DEBUG | 14:32:44 36 [GPS] handleReceived(LOCAL) (id=0x07b02ff8 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=3 rxtime=1785155564 priority=10)
+DEBUG | 14:32:44 36 [GPS] No modules interested in portnum=3, src=LOCAL
+INFO  | 14:32:44 36 [GPS] Packet History - insert: Using new slot @uptime 36.984s TRACE NEW
+DEBUG | 14:32:44 36 [GPS] Expand short PSK #1
+DEBUG | 14:32:44 36 [GPS] Use AES128 key!
+DEBUG | 14:32:44 36 [GPS] enqueue for send (id=0x07b02ff8 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x8 encrypted len=58 rxtime=1785155564 hopStart=3 relay=0x3
+DEBUG | 14:32:44 36 [GPS] txGood=0,txRelay=0,rxGood=0,rxBad=0
+DEBUG | 14:32:44 36 [GPS] Use channel 0 (hash 0x8)
+DEBUG | 14:32:44 36 [GPS] Expand short PSK #1
+DEBUG | 14:32:44 36 [GPS] Use AES128 key!
+DEBUG | 14:32:44 37 [GPS] decoded message (id=0x07b02ff8 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=3 rxtime=1785155564 hopStart=3 relay=0x32 priori
+DEBUG | 14:32:44 37 [GPS] Sent smart pos@6a674fec:6 to mesh (distanceTraveled=5966834.500000m, minDistanceThreshold=100m, timeElapsed=36972ms, minTimeInterval=300000ms)
+DEBUG | 14:32:44 37 [GPS] Took 32s to get lock
+DEBUG | 14:32:44 37 [GPS] Predict 0s to get next lock
+DEBUG | 14:32:44 37 [GPS] 119s until next search
+DEBUG | 14:32:44 37 [GPS] gps_update_interval >= 0s needed to justify hardsleep
+INFO  | 14:32:44 37 [GPS] GPS power state move from ACTIVE to HARDSLEEP
+INFO  | 14:32:44 37 Tell client we have new packets 11
+INFO  | 14:32:44 37 BLE notify fromNum
+DEBUG | 14:32:44 37 FromRadio=STATE_SEND_PACKETS
+WARN  | 14:32:44 37 [RadioIf] Can not send yet, busyRx
+WARN  | 14:32:44 37 [RadioIf] Can not send yet, busyRx
+INFO  | 14:32:44 37 [UserButton] LONG PRESS RELEASE AFTER 608 MILLIS
+DEBUG | 14:32:44 37 FromRadio=STATE_SEND_PACKETS
+DEBUG | 14:32:44 37 phone downloaded packet (id=0x07b02ff8 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x0 Portnum=3 rxtime=1785155564 hopStart=3 relay=0x3
+WARN  | 14:32:44 37 [RadioIf] Can not send yet, busyRx
+WARN  | 14:32:44 37 [RadioIf] Can not send yet, busyRx
+DEBUG | 14:32:44 37 [RadioIf] Ignore false preamble detection
+DEBUG | 14:32:44 37 [RadioIf] Started Tx (id=0x07b02ff8 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x8 encrypted len=58 rxtime=1785155564 hopStart=3 relay=0x32 prio
+DEBUG | 14:32:44 37 [RadioIf] 0 packets remain in the TX queue
+DEBUG | 14:32:45 38 [RadioIf] Packet TX: 681ms
+DEBUG | 14:32:45 38 [RadioIf] Completed sending (id=0x07b02ff8 fr=0xef8d4c32 to=0xffffffff, transport = 0, WantAck=0, HopLim=3 Ch=0x8 encrypted len=58 rxtime=1785155564 hopStart=3 relay=0x
