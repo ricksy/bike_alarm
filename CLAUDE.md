@@ -6,6 +6,7 @@ accelerometer trigger, piezo siren, GNSS, solar-assisted Li-ion.
 Full design context, hardware inventory and codebase findings:
 
 @docs/bike-alarm-project.md
+@docs/firmware-submodule.md
 
 Measurement log:
 

@@ -200,9 +200,63 @@ incompatible with months of standby.
 
 Note this is a **driver-level change to `LIS3DHSensor`**, not just a new module. Plan
 accordingly. It may be worth structuring as an opt-in low-power mode so the change is
-plausibly upstreamable rather than a permanent fork.
+plausibly upstreamable rather than a permanent fork. No upstream work exists on
+interrupt-driven accelerometer wake — see `prior-art.md`.
+
+### Use both interrupt lines, not one
+
+The LIS3DH exposes INT1 and INT2. Configure them as a pair:
+
+- one line for **significant motion** → wake / trigger
+- one line for **no motion sustained** → the bike has been put down again
+
+This gives the state machine "started moving" *and* "stopped moving" as hardware
+events, and the latter is exactly what auto-rearm needs. Detach the no-motion interrupt
+while asleep so it cannot spuriously re-wake the MCU. Pattern borrowed from the Long
+Cricket asset tracker; see `prior-art.md`.
+
+### Constraint: waking from System OFF resets the CPU
+
+On nRF52, `doDeepSleep()` calls `sd_power_system_off()`. **Waking from System OFF
+triggers a full CPU reset** — execution restarts at the reset vector, `SystemInit()`
+runs again, all globals re-initialise. Every wake is indistinguishable from a cold boot.
+The nRF52840 supports RAM retention in System OFF, but the firmware does not currently
+use it. (Source: meshtastic/firmware issue #10945.)
+
+**This is structural.** An accelerometer interrupt does not resume the alarm state
+machine — it reboots the device. Armed/disarmed state, pre-alarm counters and auto-rearm
+timers must survive a reset, via GPREGRET, retained RAM, or flash. Design the state
+machine as *restartable from persisted state*, not as a resident object holding state
+in RAM.
 
 ---
+
+## 5a. Power budget reality check
+
+The Long Cricket asset tracker (see `prior-art.md`) reaches **~2.5 µA sleep current**,
+and its designer estimates that an urban bicycle tracker on that hardware would last
+**several months**. That independently validates this project's target as achievable.
+
+But it got there largely by *removing* things:
+
+| Change | Saving |
+|---|---|
+| 20 nA-quiescent LDO instead of a conventional one | ~0.5 µA |
+| Battery charger removed entirely | ~2 µA |
+| FET-gating the battery-monitor voltage divider | ~3 µA |
+| ~800 nA accelerometer instead of a ~6.5 µA one | ~5.7 µA |
+
+**Almost every one of those is a convenience the WisBlock base board provides and this
+project cannot delete** — Li-ion charger, solar input, battery-sense divider, LEDs, an
+LDO not chosen for nanoamp quiescent current.
+
+Therefore: **the realistic board-level floor here is plausibly tens of µA, not single
+digits.** Still compatible with months of standby on a decent cell plus solar, but the
+nRF52840 datasheet System OFF figure is not the number to plan against.
+
+**Consequence for the roadmap:** measure the bare WisBlock in deep sleep *before*
+optimising firmware. If the board floor is ~40 µA, the accelerometer interrupt work
+changes little, and that must be known in week one rather than month three.
 
 ## 6. Software plan
 
@@ -214,9 +268,10 @@ life. Goal is a loud noise when the bike moves and a LoRa message that arrives.
 machine is needed:
 
 - States: disarmed, armed, pre-alarm (warning chirp), full alarm, auto-rearm
+- **State persisted across resets** — see the System OFF constraint in §5
 - Escalation logic and siren timeout
 - Arm/disarm over LoRa, ideally authenticated
-- Interrupt-driven wake as described in §5
+- Interrupt-driven wake, using both LIS3DH interrupt lines, as described in §5
 
 **Not yet decided — radio duty cycle.** There is a direct trade-off between how
 responsive the device is to a remote disarm/locate command and how long it survives on
@@ -230,14 +285,16 @@ backed by measurement.
 1. Physically inventory Kit 2; record actual part numbers (§2.3)
 2. Flash stock Meshtastic `env:rak4631`, confirm the mesh works, confirm which sensors
    the I2C scan reports at boot
-3. Design the siren driver circuit — MOSFET, boost converter, standby shutdown
-4. Baseline current measurement: stock firmware, idle
-5. LIS3DH interrupt-driven wake (driver change)
-6. Re-measure current; compare against the months-scale target
-7. Alarm state machine module
-8. Radio duty-cycle strategy, informed by 4 and 6
-9. GPS integration and power gating
-10. Battery life model including solar input
+3. **Baseline current measurement: stock firmware, deep sleep.** Do this early — §5a
+   explains why it may cap what firmware work can achieve
+4. Design the siren driver circuit — MOSFET, boost converter, standby shutdown
+5. LIS3DH interrupt-driven wake, both interrupt lines (driver change)
+6. Persist alarm state across resets (GPREGRET / retained RAM / flash)
+7. Re-measure current; compare against the months-scale target
+8. Alarm state machine module
+9. Radio duty-cycle strategy, informed by 3 and 7 — the one problem with no prior art
+10. GPS integration and power gating (ephemeris-aware duty cycle)
+11. Battery life model including solar input
 
 ---
 
@@ -270,6 +327,21 @@ Suggested reading order for orientation:
 - **Prefer upstreamable changes** over a divergent fork where the cost is similar.
 - Keep the **[UNVERIFIED]** markers honest — promote items to **[VERIFIED]** only after
   actually checking, and note how they were checked.
+
+---
+
+## 10. Prior art
+
+See `prior-art.md`. Headlines:
+
+- **No finished open-source Meshtastic bike alarm exists.**
+- **LoRider** (Hackster.io, 2025) reached the same architecture independently but was
+  never implemented — the author lacked firmware experience.
+- **meshtastic/firmware #9750 ("Claymore module")** is an open request for exactly this
+  kind of motion-triggered alarm module. Stalled on an unrelated I2C address collision.
+  There is upstream appetite; an argument for building this upstreamably.
+- **Long Cricket** (Tlera Corp) is the power-engineering reference — see §5a.
+- **Nothing upstream** addresses interrupt-driven accelerometer wake.
 
 ---
 
