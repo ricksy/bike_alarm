@@ -1,0 +1,40 @@
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+.clang_complete
+.gcc-flags.json
+
+# Build artefacts
+*.hex
+*.uf2
+*.elf
+*.bin
+*.map
+
+# Editors / IDE
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.code-workspace
+
+# Claude Code local (developer-private, not shared)
+CLAUDE.local.md
+.claude/settings.local.json
+
+# KiCad / EDA
+*-backups/
+*.kicad_prl
+fp-info-cache
+*.bak
+*.lck
+
+# Python tooling (Meshtastic CLI, plotting scripts)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
